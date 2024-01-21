@@ -105,6 +105,16 @@ const WritingCanvas = () => {
     setAllStrokes([]);
   };
 
+  const renderButtons = (type: string) => {
+    return flashcards
+      .filter(card => card.type === type)
+      .map((card, index) => (
+        <button key={index} onClick={() => selectCharacter(card)}>
+          {card.character}
+        </button>
+      ));
+  };
+
   return (
     <div>
       <canvas
@@ -117,11 +127,15 @@ const WritingCanvas = () => {
         onMouseOut={endDrawing}
       />
       <div>
-        {flashcards.map((card, index) => (
-          <button key={index} onClick={() => selectCharacter(card)}>
-            {card.character}
-          </button>
-        ))}
+        <div>
+          <strong>Hiragana</strong> | {renderButtons("Hiragana")}
+        </div>
+        <div>
+          <strong>Katakana</strong> | {renderButtons("Katakana")}
+        </div>
+        <div>
+          <strong>Kanji</strong> | {renderButtons("Kanji")}
+        </div>
       </div>
     </div>
   );
