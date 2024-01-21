@@ -73,6 +73,10 @@ const WritingCanvas = () => {
     setCurrentStroke([]);
   };
 
+  const resetCanvas = () => {
+    setAllStrokes([]);
+  };
+
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -102,7 +106,7 @@ const WritingCanvas = () => {
 
   const selectCharacter = (character: Flashcard) => {
     setCurrentCharacter(character);
-    setAllStrokes([]);
+    resetCanvas();
   };
 
   const renderButtons = (type: string) => {
@@ -126,6 +130,12 @@ const WritingCanvas = () => {
         onMouseUp={endDrawing}
         onMouseOut={endDrawing}
       />
+      <button 
+        onClick={resetCanvas} 
+        className="reset-button"
+      >
+        Reset
+      </button>
       <div>
         <div>
           <strong>Hiragana</strong> | {renderButtons("Hiragana")}
