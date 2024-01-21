@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <WritingCanvas referenceCharacter="你" />
+        <WritingCanvas />
       </header>
     </div>
   );
