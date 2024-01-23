@@ -19,14 +19,21 @@ const Chat: React.FC = () => {
 
     try {
       const response = await axios.post('http://localhost:3001/api/openai', { prompt: userMessage });
-      setChatHistory(prev => [...prev, { sender: 'user', text: userMessage }, { sender: 'ai', text: response.data.response }]);
+      setChatHistory(prev => [...prev, { sender: 'ai', text: response.data.response }]);
     } catch (error) {
       console.error('Error sending message:', error);
     }
   };
 
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      sendMessage();
+    }
+  };
+
   return (
-    <div>
+    <div className='chat-container'>
       <div className="chat-history">
         {chatHistory.map((msg, index) => (
           <div key={index} className={`message ${msg.sender}`}>
@@ -34,12 +41,16 @@ const Chat: React.FC = () => {
           </div>
         ))}
       </div>
-      <input 
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
-        placeholder="Type your message"
-      />
-      <button onClick={sendMessage}>Send</button>
+      <div className="input-area">
+        <input 
+            type="text"
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            onKeyDown={handleKeyDown}
+            placeholder="Type your message"
+        />
+        <button onClick={sendMessage}>Send</button>
+      </div>
     </div>
   );
 };

@@ -1,57 +1,75 @@
-    .chat-container {
+.chat-container {
     display: flex;
     flex-direction: column;
     max-width: 400px;
+    height: 500px;
     margin: auto;
-    border: 1px solid #ddd;
+    border: 1px solid #444;
     padding: 10px;
     border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    }
-
-    .chat-history {
-    height: 300px;
+    background-color: #111; /* Dark background */
+    color: #fff; /* Light text */
+  }
+  
+  .chat-history {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
     overflow-y: auto;
+    height: 500px;
+    width: 387px;
     margin-bottom: 10px;
     padding: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid #333;
     border-radius: 5px;
-    background-color: #f9f9f9;
-    }
-
-    .message {
-    padding: 5px;
-    margin-bottom: 5px;
-    border-radius: 5px;
-    }
-
-    .message.user {
-    text-align: right;
-    background-color: #e0f7fa;
-    }
-
-    .message.ai {
-    text-align: left;
-    background-color: #fff0f1;
-    }
-
-    input[type="text"] {
+    background-color: #222; /* Darker background for chat history */
+  }
+  
+  .message {
+    max-width: 60%;
+    word-wrap: break-word;
+    padding: 8px 12px;
+    margin-bottom: 8px;
+    border-radius: 20px;
+    font-size: 15px;
+    align-self: flex-start;
+  }
+  
+  .message.user {
+    background-color: #007bff; /* Blue for user */
+    color: white;
+    align-self: flex-end;
+  }
+  
+  .message.ai {
+    background-color: #666; /* Gray for AI */
+    color: white;
+    align-self: flex-start;
+  }
+  
+  .input-area {
+    display: flex;
+  }
+  
+  input[type="text"] {
+    flex-grow: 1;
     padding: 8px;
-    border: 1px solid #ddd;
+    border: 1px solid #333;
     border-radius: 5px;
-    width: calc(100% - 20px);
-    margin-right: 10px;
-    }
-
-    button {
+    background-color: #222;
+    color: white;
+  }
+  
+  button {
     padding: 8px 15px;
     border: none;
     background-color: #007bff;
     color: white;
     border-radius: 5px;
     cursor: pointer;
-    }
-
-    button:hover {
+  }
+  
+  button:hover {
     background-color: #0056b3;
-    }
+  }
+  
