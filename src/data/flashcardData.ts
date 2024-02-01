@@ -412,6 +412,231 @@ export const flashcards = [
     romaji: "n",
     strokes: 2,
     zones: [{ x: 235, y: 235, width: 275, height: 275 }]
+  },
+  {
+    type: "Hiragana",
+    character: "が",
+    pronunciation: "",
+    meaning: "Hiragana for 'ga'",
+    romaji: "ga",
+    strokes: 3,
+    zones: [{ x: 260, y: 260, width: 300, height: 300 }]
+  },
+  {
+    type: "Hiragana",
+    character: "ぎ",
+    pronunciation: "",
+    meaning: "Hiragana for 'gi'",
+    romaji: "gi",
+    strokes: 3,
+    zones: [{ x: 265, y: 265, width: 305, height: 305 }]
+  },
+  {
+    type: "Hiragana",
+    character: "ぐ",
+    pronunciation: "",
+    meaning: "Hiragana for 'gu'",
+    romaji: "gu",
+    strokes: 3,
+    zones: [{ x: 270, y: 270, width: 310, height: 310 }]
+  },
+  {
+    type: "Hiragana",
+    character: "げ",
+    pronunciation: "",
+    meaning: "Hiragana for 'ge'",
+    romaji: "ge",
+    strokes: 3,
+    zones: [{ x: 275, y: 275, width: 315, height: 315 }]
+  },
+  {
+    type: "Hiragana",
+    character: "ご",
+    pronunciation: "",
+    meaning: "Hiragana for 'go'",
+    romaji: "go",
+    strokes: 3,
+    zones: [{ x: 280, y: 280, width: 320, height: 320 }]
+  },
+  {
+    type: "Hiragana",
+    character: "ざ",
+    pronunciation: "",
+    meaning: "Hiragana for 'za'",
+    romaji: "za",
+    strokes: 3,
+    zones: [{ x: 285, y: 285, width: 325, height: 325 }]
+  },
+  {
+    type: "Hiragana",
+    character: "じ",
+    pronunciation: "",
+    meaning: "Hiragana for 'ji'",
+    romaji: "ji",
+    strokes: 3,
+    zones: [{ x: 290, y: 290, width: 330, height: 330 }]
+  },
+  {
+    type: "Hiragana",
+    character: "ず",
+    pronunciation: "",
+    meaning: "Hiragana for 'zu'",
+    romaji: "zu",
+    strokes: 3,
+    zones: [{ x: 295, y: 295, width: 335, height: 335 }]
+  },
+  {
+    type: "Hiragana",
+    character: "ぜ",
+    pronunciation: "",
+    meaning: "Hiragana for 'ze'",
+    romaji: "ze",
+    strokes: 3,
+    zones: [{ x: 300, y: 300, width: 340, height: 340 }]
+  },
+  {
+    type: "Hiragana",
+    character: "ぞ",
+    pronunciation: "",
+    meaning: "Hiragana for 'zo'",
+    romaji: "zo",
+    strokes: 3,
+    zones: [{ x: 305, y: 305, width: 345, height: 345 }]
+  },
+  {
+    type: "Hiragana",
+    character: "だ",
+    pronunciation: "",
+    meaning: "Hiragana for 'da'",
+    romaji: "da",
+    strokes: 3,
+    zones: [{ x: 310, y: 310, width: 350, height: 350 }]
+  },
+  {
+    type: "Hiragana",
+    character: "ぢ",
+    pronunciation: "",
+    meaning: "Hiragana for 'ji'",
+    romaji: "ji",
+    strokes: 3,
+    zones: [{ x: 315, y: 315, width: 355, height: 355 }]
+  },
+  {
+    type: "Hiragana",
+    character: "づ",
+    pronunciation: "",
+    meaning: "Hiragana for 'zu'",
+    romaji: "zu",
+    strokes: 3,
+    zones: [{ x: 320, y: 320, width: 360, height: 360 }]
+  },
+  {
+    type: "Hiragana",
+    character: "で",
+    pronunciation: "",
+    meaning: "Hiragana for 'de'",
+    romaji: "de",
+    strokes: 3,
+    zones: [{ x: 325, y: 325, width: 365, height: 365 }]
+  },
+  {
+    type: "Hiragana",
+    character: "ど",
+    pronunciation: "",
+    meaning: "Hiragana for 'do'",
+    romaji: "do",
+    strokes: 3,
+    zones: [{ x: 330, y: 330, width: 370, height: 370 }]
+  },
+  {
+    type: "Hiragana",
+    character: "ば",
+    pronunciation: "",
+    meaning: "Hiragana for 'ba'",
+    romaji: "ba",
+    strokes: 3,
+    zones: [{ x: 335, y: 335, width: 375, height: 375 }]
+  },
+  {
+    type: "Hiragana",
+    character: "び",
+    pronunciation: "",
+    meaning: "Hiragana for 'bi'",
+    romaji: "bi",
+    strokes: 3,
+    zones: [{ x: 340, y: 340, width: 380, height: 380 }]
+  },
+  {
+    type: "Hiragana",
+    character: "ぶ",
+    pronunciation: "",
+    meaning: "Hiragana for 'bu'",
+    romaji: "bu",
+    strokes: 3,
+    zones: [{ x: 345, y: 345, width: 385, height: 385 }]
+  },
+  {
+    type: "Hiragana",
+    character: "べ",
+    pronunciation: "",
+    meaning: "Hiragana for 'be'",
+    romaji: "be",
+    strokes: 3,
+    zones: [{ x: 350, y: 350, width: 390, height: 390 }]
+  },
+  {
+    type: "Hiragana",
+    character: "ぼ",
+    pronunciation: "",
+    meaning: "Hiragana for 'bo'",
+    romaji: "bo",
+    strokes: 3,
+    zones: [{ x: 355, y: 355, width: 395, height: 395 }]
+  },
+  {
+    type: "Hiragana",
+    character: "ぱ",
+    pronunciation: "",
+    meaning: "Hiragana for 'pa'",
+    romaji: "pa",
+    strokes: 3,
+    zones: [{ x: 360, y: 360, width: 400, height: 400 }]
+  },
+  {
+    type: "Hiragana",
+    character: "ぴ",
+    pronunciation: "",
+    meaning: "Hiragana for 'pi'",
+    romaji: "pi",
+    strokes: 3,
+    zones: [{ x: 365, y: 365, width: 405, height: 405 }]
+  },
+  {
+    type: "Hiragana",
+    character: "ぷ",
+    pronunciation: "",
+    meaning: "Hiragana for 'pu'",
+    romaji: "pu",
+    strokes: 3,
+    zones: [{ x: 370, y: 370, width: 410, height: 410 }]
+  },
+  {
+    type: "Hiragana",
+    character: "ぺ",
+    pronunciation: "",
+    meaning: "Hiragana for 'pe'",
+    romaji: "pe",
+    strokes: 3,
+    zones: [{ x: 375, y: 375, width: 415, height: 415 }]
+  },
+  {
+    type: "Hiragana",
+    character: "ぽ",
+    pronunciation: "",
+    meaning: "Hiragana for 'po'",
+    romaji: "po",
+    strokes: 3,
+    zones: [{ x: 380, y: 380, width: 420, height: 420 }]
   }
 ];
 
