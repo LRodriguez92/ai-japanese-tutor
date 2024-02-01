@@ -2,12 +2,11 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width: 400px;
-  height: 100%;
+  max-width: 100%;
+  height: 98vh;
   margin: auto;
   border: 1px solid #444;
   padding: 10px;
-  border-radius: 10px;
   background-color: #111; /* Dark background */
   color: #fff; /* Light text */
 }
@@ -76,7 +75,7 @@ button:hover {
 .message-container {
   display: flex;
   flex-direction: column;
-  align-items: flex-end; /* Aligns the translation text correctly for user messages */
+  align-items: flex-end; 
 }
 
 .translate-text {
