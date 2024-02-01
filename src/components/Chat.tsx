@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import './Chat.css';
 
@@ -16,12 +16,21 @@ const Chat: React.FC = () => {
   const [input, setInput] = useState<string>('');
   const [chatHistory, setChatHistory] = useState<ChatMessage[]>([]);
 
+  const chatHistoryRef = useRef<HTMLDivElement>(null);
+
+  const scrollToBottom = () => {
+    const chatHistoryEl = chatHistoryRef.current;
+    if (chatHistoryEl) {
+      chatHistoryEl.scrollTop = chatHistoryEl.scrollHeight;
+    }
+  };
+  
   const sendMessage = async () => {
     if (!input.trim()) return;
     const userMessage: string = input;
     setChatHistory(prev => [...prev, { sender: 'user', text: { japanese: userMessage, english: '' }, showEnglish: false }]);
     setInput('');
-
+    
     try {
       const response = await axios.post('http://localhost:3001/api/openai', { prompt: userMessage });
       const { japanese, english } = response.data;
@@ -30,14 +39,14 @@ const Chat: React.FC = () => {
       console.error('Error sending message:', error);
     }
   };
-
+  
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
       sendMessage();
     }
   };
-
+  
   const toggleTranslation = (index: number) => {
     setChatHistory(prev => prev.map((msg, i) => {
       if (i === index && msg.sender === 'ai') {
@@ -47,10 +56,11 @@ const Chat: React.FC = () => {
     }));
   };
   
-
+  useEffect(scrollToBottom, [chatHistory]);
+  
   return (
     <div className='chat-container'>
-      <div className="chat-history">
+      <div ref={chatHistoryRef} className="chat-history">
         {chatHistory.map((msg, index) => (
           <div className={`message-wrapper ${msg.sender}`} key={index} onClick={() => msg.sender === 'ai' && toggleTranslation(index)}>
             <div className={`message ${msg.sender}`}>
