@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import './Chat.css';
+import InfoModal from './InfoModal';
 
 interface ChatMessage {
   sender: 'user' | 'ai';
@@ -15,6 +16,9 @@ interface ChatMessage {
 const Chat: React.FC = () => {
   const [input, setInput] = useState<string>('');
   const [chatHistory, setChatHistory] = useState<ChatMessage[]>([]);
+  const [showModal, setShowModal] = useState(() => {
+    return localStorage.getItem('showModal') !== 'false';
+  });
 
   const chatHistoryRef = useRef<HTMLDivElement>(null);
 
@@ -60,6 +64,7 @@ const Chat: React.FC = () => {
   
   return (
     <div className='chat-container'>
+      {showModal && <InfoModal onClose={() => setShowModal(false)} />}
       <div ref={chatHistoryRef} className="chat-history">
         {chatHistory.map((msg, index) => (
           <div className={`message-wrapper ${msg.sender}`} key={index} onClick={() => msg.sender === 'ai' && toggleTranslation(index)}>
