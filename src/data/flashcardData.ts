@@ -934,7 +934,422 @@ export const flashcards = [
     romaji: "pyo",
     strokes: 4,
     zones: [{ x: 170, y: 170, width: 210, height: 210 }]
-  },  
+  },
+  {
+    type: "Katakana",
+    character: "ア",
+    pronunciation: "",
+    meaning: "Katakana for 'a'",
+    romaji: "a",
+    strokes: 2,
+    zones: [{ x: 10, y: 10, width: 50, height: 50 }]
+  },
+  {
+    type: "Katakana",
+    character: "イ",
+    pronunciation: "",
+    meaning: "Katakana for 'i'",
+    romaji: "i",
+    strokes: 2,
+    zones: [{ x: 15, y: 15, width: 55, height: 55 }]
+  },
+  {
+    type: "Katakana",
+    character: "ウ",
+    pronunciation: "",
+    meaning: "Katakana for 'u'",
+    romaji: "u",
+    strokes: 2,
+    zones: [{ x: 20, y: 20, width: 60, height: 60 }]
+  },
+  {
+    type: "Katakana",
+    character: "エ",
+    pronunciation: "",
+    meaning: "Katakana for 'e'",
+    romaji: "e",
+    strokes: 2,
+    zones: [{ x: 25, y: 25, width: 65, height: 65 }]
+  },
+  {
+    type: "Katakana",
+    character: "オ",
+    pronunciation: "",
+    meaning: "Katakana for 'o'",
+    romaji: "o",
+    strokes: 3,
+    zones: [{ x: 30, y: 30, width: 70, height: 70 }]
+  },
+  {
+    type: "Katakana",
+    character: "カ",
+    pronunciation: "",
+    meaning: "Katakana for 'ka'",
+    romaji: "ka",
+    strokes: 2,
+    zones: [{ x: 35, y: 35, width: 75, height: 75 }]
+  },
+  {
+    type: "Katakana",
+    character: "キ",
+    pronunciation: "",
+    meaning: "Katakana for 'ki'",
+    romaji: "ki",
+    strokes: 3,
+    zones: [{ x: 40, y: 40, width: 80, height: 80 }]
+  },
+  {
+    type: "Katakana",
+    character: "ク",
+    pronunciation: "",
+    meaning: "Katakana for 'ku'",
+    romaji: "ku",
+    strokes: 2,
+    zones: [{ x: 45, y: 45, width: 85, height: 85 }]
+  },
+  {
+    type: "Katakana",
+    character: "ケ",
+    pronunciation: "",
+    meaning: "Katakana for 'ke'",
+    romaji: "ke",
+    strokes: 3,
+    zones: [{ x: 50, y: 50, width: 90, height: 90 }]
+  },
+  {
+    type: "Katakana",
+    character: "コ",
+    pronunciation: "",
+    meaning: "Katakana for 'ko'",
+    romaji: "ko",
+    strokes: 2,
+    zones: [{ x: 55, y: 55, width: 95, height: 95 }]
+  },
+  {
+  type: "Katakana",
+  character: "サ",
+  pronunciation: "",
+  meaning: "Katakana for 'sa'",
+  romaji: "sa",
+  strokes: 3,
+  zones: [{ x: 60, y: 60, width: 100, height: 100 }]
+},
+{
+  type: "Katakana",
+  character: "シ",
+  pronunciation: "",
+  meaning: "Katakana for 'shi'",
+  romaji: "shi",
+  strokes: 3,
+  zones: [{ x: 65, y: 65, width: 105, height: 105 }]
+},
+{
+  type: "Katakana",
+  character: "ス",
+  pronunciation: "",
+  meaning: "Katakana for 'su'",
+  romaji: "su",
+  strokes: 2,
+  zones: [{ x: 70, y: 70, width: 110, height: 110 }]
+},
+{
+  type: "Katakana",
+  character: "セ",
+  pronunciation: "",
+  meaning: "Katakana for 'se'",
+  romaji: "se",
+  strokes: 3,
+  zones: [{ x: 75, y: 75, width: 115, height: 115 }]
+},
+{
+  type: "Katakana",
+  character: "ソ",
+  pronunciation: "",
+  meaning: "Katakana for 'so'",
+  romaji: "so",
+  strokes: 2,
+  zones: [{ x: 80, y: 80, width: 120, height: 120 }]
+},
+{
+  type: "Katakana",
+  character: "タ",
+  pronunciation: "",
+  meaning: "Katakana for 'ta'",
+  romaji: "ta",
+  strokes: 3,
+  zones: [{ x: 85, y: 85, width: 125, height: 125 }]
+},
+{
+  type: "Katakana",
+  character: "チ",
+  pronunciation: "",
+  meaning: "Katakana for 'chi'",
+  romaji: "chi",
+  strokes: 3,
+  zones: [{ x: 90, y: 90, width: 130, height: 130 }]
+},
+{
+  type: "Katakana",
+  character: "ツ",
+  pronunciation: "",
+  meaning: "Katakana for 'tsu'",
+  romaji: "tsu",
+  strokes: 3,
+  zones: [{ x: 95, y: 95, width: 135, height: 135 }]
+},
+{
+  type: "Katakana",
+  character: "テ",
+  pronunciation: "",
+  meaning: "Katakana for 'te'",
+  romaji: "te",
+  strokes: 3,
+  zones: [{ x: 100, y: 100, width: 140, height: 140 }]
+},
+{
+  type: "Katakana",
+  character: "ト",
+  pronunciation: "",
+  meaning: "Katakana for 'to'",
+  romaji: "to",
+  strokes: 2,
+  zones: [{ x: 105, y: 105, width: 145, height: 145 }]
+},
+{
+  type: "Katakana",
+  character: "ナ",
+  pronunciation: "",
+  meaning: "Katakana for 'na'",
+  romaji: "na",
+  strokes: 2,
+  zones: [{ x: 110, y: 110, width: 150, height: 150 }]
+},
+{
+  type: "Katakana",
+  character: "ニ",
+  pronunciation: "",
+  meaning: "Katakana for 'ni'",
+  romaji: "ni",
+  strokes: 2,
+  zones: [{ x: 115, y: 115, width: 155, height: 155 }]
+},
+{
+  type: "Katakana",
+  character: "ヌ",
+  pronunciation: "",
+  meaning: "Katakana for 'nu'",
+  romaji: "nu",
+  strokes: 2,
+  zones: [{ x: 120, y: 120, width: 160, height: 160 }]
+},
+{
+  type: "Katakana",
+  character: "ネ",
+  pronunciation: "",
+  meaning: "Katakana for 'ne'",
+  romaji: "ne",
+  strokes: 2,
+  zones: [{ x: 125, y: 125, width: 165, height: 165 }]
+},
+{
+  type: "Katakana",
+  character: "ノ",
+  pronunciation: "",
+  meaning: "Katakana for 'no'",
+  romaji: "no",
+  strokes: 2,
+  zones: [{ x: 130, y: 130, width: 170, height: 170 }]
+},
+{
+  type: "Katakana",
+  character: "ハ",
+  pronunciation: "",
+  meaning: "Katakana for 'ha'",
+  romaji: "ha",
+  strokes: 2,
+  zones: [{ x: 135, y: 135, width: 175, height: 175 }]
+},
+{
+  type: "Katakana",
+  character: "ヒ",
+  pronunciation: "",
+  meaning: "Katakana for 'hi'",
+  romaji: "hi",
+  strokes: 2,
+  zones: [{ x: 140, y: 140, width: 180, height: 180 }]
+},
+{
+  type: "Katakana",
+  character: "フ",
+  pronunciation: "",
+  meaning: "Katakana for 'fu'",
+  romaji: "fu",
+  strokes: 2,
+  zones: [{ x: 145, y: 145, width: 185, height: 185 }]
+},
+{
+  type: "Katakana",
+  character: "ヘ",
+  pronunciation: "",
+  meaning: "Katakana for 'he'",
+  romaji: "he",
+  strokes: 2,
+  zones: [{ x: 150, y: 150, width: 190, height: 190 }]
+},
+{
+  type: "Katakana",
+  character: "ホ",
+  pronunciation: "",
+  meaning: "Katakana for 'ho'",
+  romaji: "ho",
+  strokes: 2,
+  zones: [{ x: 155, y: 155, width: 195, height: 195 }]
+},
+{
+  type: "Katakana",
+  character: "マ",
+  pronunciation: "",
+  meaning: "Katakana for 'ma'",
+  romaji: "ma",
+  strokes: 2,
+  zones: [{ x: 160, y: 160, width: 200, height: 200 }]
+},
+{
+  type: "Katakana",
+  character: "ミ",
+  pronunciation: "",
+  meaning: "Katakana for 'mi'",
+  romaji: "mi",
+  strokes: 2,
+  zones: [{ x: 165, y: 165, width: 205, height: 205 }]
+},
+{
+  type: "Katakana",
+  character: "ム",
+  pronunciation: "",
+  meaning: "Katakana for 'mu'",
+  romaji: "mu",
+  strokes: 2,
+  zones: [{ x: 170, y: 170, width: 210, height: 210 }]
+},
+{
+  type: "Katakana",
+  character: "メ",
+  pronunciation: "",
+  meaning: "Katakana for 'me'",
+  romaji: "me",
+  strokes: 2,
+  zones: [{ x: 175, y: 175, width: 215, height: 215 }]
+},
+{
+  type: "Katakana",
+  character: "モ",
+  pronunciation: "",
+  meaning: "Katakana for 'mo'",
+  romaji: "mo",
+  strokes: 2,
+  zones: [{ x: 180, y: 180, width: 220, height: 220 }]
+},
+{
+  type: "Katakana",
+  character: "ヤ",
+  pronunciation: "",
+  meaning: "Katakana for 'ya'",
+  romaji: "ya",
+  strokes: 2,
+  zones: [{ x: 185, y: 185, width: 225, height: 225 }]
+},
+{
+  type: "Katakana",
+  character: "ユ",
+  pronunciation: "",
+  meaning: "Katakana for 'yu'",
+  romaji: "yu",
+  strokes: 2,
+  zones: [{ x: 190, y: 190, width: 230, height: 230 }]
+},
+{
+  type: "Katakana",
+  character: "ヨ",
+  pronunciation: "",
+  meaning: "Katakana for 'yo'",
+  romaji: "yo",
+  strokes: 2,
+  zones: [{ x: 195, y: 195, width: 235, height: 235 }]
+},
+{
+  type: "Katakana",
+  character: "ラ",
+  pronunciation: "",
+  meaning: "Katakana for 'ra'",
+  romaji: "ra",
+  strokes: 2,
+  zones: [{ x: 200, y: 200, width: 240, height: 240 }]
+},
+{
+  type: "Katakana",
+  character: "リ",
+  pronunciation: "",
+  meaning: "Katakana for 'ri'",
+  romaji: "ri",
+  strokes: 2,
+  zones: [{ x: 205, y: 205, width: 245, height: 245 }]
+},
+{
+  type: "Katakana",
+  character: "ル",
+  pronunciation: "",
+  meaning: "Katakana for 'ru'",
+  romaji: "ru",
+  strokes: 2,
+  zones: [{ x: 210, y: 210, width: 250, height: 250 }]
+},
+{
+  type: "Katakana",
+  character: "レ",
+  pronunciation: "",
+  meaning: "Katakana for 're'",
+  romaji: "re",
+  strokes: 2,
+  zones: [{ x: 215, y: 215, width: 255, height: 255 }]
+},
+{
+  type: "Katakana",
+  character: "ロ",
+  pronunciation: "",
+  meaning: "Katakana for 'ro'",
+  romaji: "ro",
+  strokes: 2,
+  zones: [{ x: 220, y: 220, width: 260, height: 260 }]
+},
+{
+  type: "Katakana",
+  character: "ワ",
+  pronunciation: "",
+  meaning: "Katakana for 'wa'",
+  romaji: "wa",
+  strokes: 2,
+  zones: [{ x: 225, y: 225, width: 265, height: 265 }]
+},
+{
+  type: "Katakana",
+  character: "ヲ",
+  pronunciation: "",
+  meaning: "Katakana for 'wo'",
+  romaji: "wo",
+  strokes: 2,
+  zones: [{ x: 230, y: 230, width: 270, height: 270 }]
+},
+{
+  type: "Katakana",
+  character: "ン",
+  pronunciation: "",
+  meaning: "Katakana for 'n'",
+  romaji: "n",
+  strokes: 2,
+  zones: [{ x: 235, y: 235, width: 275, height: 275 }]
+}
+  
 ];
 
 export default flashcards;
