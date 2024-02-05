@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
-import { flashcards } from '../data/flashcardData'; // adjust the path as needed
+import { hiraganaKatakanaData } from '../data/flashcardData'; // Adjust the path as needed
+import { kanjiData } from '../data/flashcardDataKanji'; // Import Kanji data
 import './Flashcard.css';
 
 const Flashcard = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isFlipped, setIsFlipped] = useState(false);
 
-  const { character, pronunciation, meaning, romaji } = flashcards[currentIndex];
+  // Combine Hiragana/Katakana and Kanji data
+  const allFlashcards = [...hiraganaKatakanaData, ...kanjiData];
+  const { character, pronunciation, meaning, romaji } = allFlashcards[currentIndex];
 
   const handleFlip = () => {
     setIsFlipped(!isFlipped);
@@ -14,12 +17,12 @@ const Flashcard = () => {
 
   const handleNext = () => {
     setIsFlipped(false);
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % flashcards.length);
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % allFlashcards.length);
   };
 
   const handlePrevious = () => {
     setIsFlipped(false);
-    setCurrentIndex((prevIndex) => (prevIndex === 0 ? flashcards.length - 1 : prevIndex - 1));
+    setCurrentIndex((prevIndex) => (prevIndex === 0 ? allFlashcards.length - 1 : prevIndex - 1));
   };
 
   return (

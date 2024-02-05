@@ -1,4 +1,4 @@
-export const flashcards = [
+export const kanjiData = [
     {
         type: "Kanji",
         character: "一",

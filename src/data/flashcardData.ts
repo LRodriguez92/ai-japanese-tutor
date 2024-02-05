@@ -1,4 +1,4 @@
-export const flashcards = [
+export const hiraganaKatakanaData = [
   {
     type: "Hiragana",
     character: "あ",
@@ -1873,4 +1873,4 @@ export const flashcards = [
 }  
 ];
 
-export default flashcards;
+export default hiraganaKatakanaData;
