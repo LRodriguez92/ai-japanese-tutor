@@ -414,7 +414,7 @@ export const flashcards = [
     zones: [{ x: 235, y: 235, width: 275, height: 275 }]
   },
   {
-    type: "Hiragana",
+    type: "Hiragana-Dakuon",
     character: "が",
     pronunciation: "",
     meaning: "Hiragana for 'ga'",
@@ -423,7 +423,7 @@ export const flashcards = [
     zones: [{ x: 260, y: 260, width: 300, height: 300 }]
   },
   {
-    type: "Hiragana",
+    type: "Hiragana-Dakuon",
     character: "ぎ",
     pronunciation: "",
     meaning: "Hiragana for 'gi'",
@@ -432,7 +432,7 @@ export const flashcards = [
     zones: [{ x: 265, y: 265, width: 305, height: 305 }]
   },
   {
-    type: "Hiragana",
+    type: "Hiragana-Dakuon",
     character: "ぐ",
     pronunciation: "",
     meaning: "Hiragana for 'gu'",
@@ -441,7 +441,7 @@ export const flashcards = [
     zones: [{ x: 270, y: 270, width: 310, height: 310 }]
   },
   {
-    type: "Hiragana",
+    type: "Hiragana-Dakuon",
     character: "げ",
     pronunciation: "",
     meaning: "Hiragana for 'ge'",
@@ -450,7 +450,7 @@ export const flashcards = [
     zones: [{ x: 275, y: 275, width: 315, height: 315 }]
   },
   {
-    type: "Hiragana",
+    type: "Hiragana-Dakuon",
     character: "ご",
     pronunciation: "",
     meaning: "Hiragana for 'go'",
@@ -459,7 +459,7 @@ export const flashcards = [
     zones: [{ x: 280, y: 280, width: 320, height: 320 }]
   },
   {
-    type: "Hiragana",
+    type: "Hiragana-Dakuon",
     character: "ざ",
     pronunciation: "",
     meaning: "Hiragana for 'za'",
@@ -468,7 +468,7 @@ export const flashcards = [
     zones: [{ x: 285, y: 285, width: 325, height: 325 }]
   },
   {
-    type: "Hiragana",
+    type: "Hiragana-Dakuon",
     character: "じ",
     pronunciation: "",
     meaning: "Hiragana for 'ji'",
@@ -477,7 +477,7 @@ export const flashcards = [
     zones: [{ x: 290, y: 290, width: 330, height: 330 }]
   },
   {
-    type: "Hiragana",
+    type: "Hiragana-Dakuon",
     character: "ず",
     pronunciation: "",
     meaning: "Hiragana for 'zu'",
@@ -486,7 +486,7 @@ export const flashcards = [
     zones: [{ x: 295, y: 295, width: 335, height: 335 }]
   },
   {
-    type: "Hiragana",
+    type: "Hiragana-Dakuon",
     character: "ぜ",
     pronunciation: "",
     meaning: "Hiragana for 'ze'",
@@ -495,7 +495,7 @@ export const flashcards = [
     zones: [{ x: 300, y: 300, width: 340, height: 340 }]
   },
   {
-    type: "Hiragana",
+    type: "Hiragana-Dakuon",
     character: "ぞ",
     pronunciation: "",
     meaning: "Hiragana for 'zo'",
@@ -504,7 +504,7 @@ export const flashcards = [
     zones: [{ x: 305, y: 305, width: 345, height: 345 }]
   },
   {
-    type: "Hiragana",
+    type: "Hiragana-Dakuon",
     character: "だ",
     pronunciation: "",
     meaning: "Hiragana for 'da'",
@@ -513,7 +513,7 @@ export const flashcards = [
     zones: [{ x: 310, y: 310, width: 350, height: 350 }]
   },
   {
-    type: "Hiragana",
+    type: "Hiragana-Dakuon",
     character: "ぢ",
     pronunciation: "",
     meaning: "Hiragana for 'ji'",
@@ -522,7 +522,7 @@ export const flashcards = [
     zones: [{ x: 315, y: 315, width: 355, height: 355 }]
   },
   {
-    type: "Hiragana",
+    type: "Hiragana-Dakuon",
     character: "づ",
     pronunciation: "",
     meaning: "Hiragana for 'zu'",
@@ -531,7 +531,7 @@ export const flashcards = [
     zones: [{ x: 320, y: 320, width: 360, height: 360 }]
   },
   {
-    type: "Hiragana",
+    type: "Hiragana-Dakuon",
     character: "で",
     pronunciation: "",
     meaning: "Hiragana for 'de'",
@@ -540,7 +540,7 @@ export const flashcards = [
     zones: [{ x: 325, y: 325, width: 365, height: 365 }]
   },
   {
-    type: "Hiragana",
+    type: "Hiragana-Dakuon",
     character: "ど",
     pronunciation: "",
     meaning: "Hiragana for 'do'",
@@ -549,7 +549,7 @@ export const flashcards = [
     zones: [{ x: 330, y: 330, width: 370, height: 370 }]
   },
   {
-    type: "Hiragana",
+    type: "Hiragana-Dakuon",
     character: "ば",
     pronunciation: "",
     meaning: "Hiragana for 'ba'",
@@ -558,7 +558,7 @@ export const flashcards = [
     zones: [{ x: 335, y: 335, width: 375, height: 375 }]
   },
   {
-    type: "Hiragana",
+    type: "Hiragana-Dakuon",
     character: "び",
     pronunciation: "",
     meaning: "Hiragana for 'bi'",
@@ -567,7 +567,7 @@ export const flashcards = [
     zones: [{ x: 340, y: 340, width: 380, height: 380 }]
   },
   {
-    type: "Hiragana",
+    type: "Hiragana-Dakuon",
     character: "ぶ",
     pronunciation: "",
     meaning: "Hiragana for 'bu'",
@@ -576,7 +576,7 @@ export const flashcards = [
     zones: [{ x: 345, y: 345, width: 385, height: 385 }]
   },
   {
-    type: "Hiragana",
+    type: "Hiragana-Dakuon",
     character: "べ",
     pronunciation: "",
     meaning: "Hiragana for 'be'",
@@ -585,7 +585,7 @@ export const flashcards = [
     zones: [{ x: 350, y: 350, width: 390, height: 390 }]
   },
   {
-    type: "Hiragana",
+    type: "Hiragana-Dakuon",
     character: "ぼ",
     pronunciation: "",
     meaning: "Hiragana for 'bo'",
@@ -594,7 +594,7 @@ export const flashcards = [
     zones: [{ x: 355, y: 355, width: 395, height: 395 }]
   },
   {
-    type: "Hiragana",
+    type: "Hiragana-Handakuon",
     character: "ぱ",
     pronunciation: "",
     meaning: "Hiragana for 'pa'",
@@ -603,7 +603,7 @@ export const flashcards = [
     zones: [{ x: 360, y: 360, width: 400, height: 400 }]
   },
   {
-    type: "Hiragana",
+    type: "Hiragana-Handakuon",
     character: "ぴ",
     pronunciation: "",
     meaning: "Hiragana for 'pi'",
@@ -612,7 +612,7 @@ export const flashcards = [
     zones: [{ x: 365, y: 365, width: 405, height: 405 }]
   },
   {
-    type: "Hiragana",
+    type: "Hiragana-Handakuon",
     character: "ぷ",
     pronunciation: "",
     meaning: "Hiragana for 'pu'",
@@ -621,7 +621,7 @@ export const flashcards = [
     zones: [{ x: 370, y: 370, width: 410, height: 410 }]
   },
   {
-    type: "Hiragana",
+    type: "Hiragana-Handakuon",
     character: "ぺ",
     pronunciation: "",
     meaning: "Hiragana for 'pe'",
@@ -630,7 +630,7 @@ export const flashcards = [
     zones: [{ x: 375, y: 375, width: 415, height: 415 }]
   },
   {
-    type: "Hiragana",
+    type: "Hiragana-Handakuon",
     character: "ぽ",
     pronunciation: "",
     meaning: "Hiragana for 'po'",
@@ -1348,6 +1348,231 @@ export const flashcards = [
   romaji: "n",
   strokes: 2,
   zones: [{ x: 235, y: 235, width: 275, height: 275 }]
+},
+{
+  type: "Katakana-Dakuon",
+  character: "ガ",
+  pronunciation: "",
+  meaning: "Katakana for 'ga'",
+  romaji: "ga",
+  strokes: 3,
+  zones: [{ x: 10, y: 10, width: 50, height: 50 }]
+},
+{
+  type: "Katakana-Dakuon",
+  character: "ギ",
+  pronunciation: "",
+  meaning: "Katakana for 'gi'",
+  romaji: "gi",
+  strokes: 3,
+  zones: [{ x: 15, y: 15, width: 55, height: 55 }]
+},
+{
+  type: "Katakana-Dakuon",
+  character: "グ",
+  pronunciation: "",
+  meaning: "Katakana for 'gu'",
+  romaji: "gu",
+  strokes: 3,
+  zones: [{ x: 20, y: 20, width: 60, height: 60 }]
+},
+{
+  type: "Katakana-Dakuon",
+  character: "ゲ",
+  pronunciation: "",
+  meaning: "Katakana for 'ge'",
+  romaji: "ge",
+  strokes: 3,
+  zones: [{ x: 25, y: 25, width: 65, height: 65 }]
+},
+{
+  type: "Katakana-Dakuon",
+  character: "ゴ",
+  pronunciation: "",
+  meaning: "Katakana for 'go'",
+  romaji: "go",
+  strokes: 3,
+  zones: [{ x: 30, y: 30, width: 70, height: 70 }]
+},
+{
+  type: "Katakana-Dakuon",
+  character: "ザ",
+  pronunciation: "",
+  meaning: "Katakana for 'za'",
+  romaji: "za",
+  strokes: 3,
+  zones: [{ x: 35, y: 35, width: 75, height: 75 }]
+},
+{
+  type: "Katakana-Dakuon",
+  character: "ジ",
+  pronunciation: "",
+  meaning: "Katakana for 'ji'",
+  romaji: "ji",
+  strokes: 3,
+  zones: [{ x: 40, y: 40, width: 80, height: 80 }]
+},
+{
+  type: "Katakana-Dakuon",
+  character: "ズ",
+  pronunciation: "",
+  meaning: "Katakana for 'zu'",
+  romaji: "zu",
+  strokes: 3,
+  zones: [{ x: 45, y: 45, width: 85, height: 85 }]
+},
+{
+  type: "Katakana-Dakuon",
+  character: "ゼ",
+  pronunciation: "",
+  meaning: "Katakana for 'ze'",
+  romaji: "ze",
+  strokes: 3,
+  zones: [{ x: 50, y: 50, width: 90, height: 90 }]
+},
+{
+  type: "Katakana-Dakuon",
+  character: "ゾ",
+  pronunciation: "",
+  meaning: "Katakana for 'zo'",
+  romaji: "zo",
+  strokes: 3,
+  zones: [{ x: 55, y: 55, width: 95, height: 95 }]
+},
+{
+  type: "Katakana-Dakuon",
+  character: "ダ",
+  pronunciation: "",
+  meaning: "Katakana for 'da'",
+  romaji: "da",
+  strokes: 3,
+  zones: [{ x: 60, y: 60, width: 100, height: 100 }]
+},
+{
+  type: "Katakana-Dakuon",
+  character: "ヂ",
+  pronunciation: "",
+  meaning: "Katakana for 'ji'",
+  romaji: "ji",
+  strokes: 3,
+  zones: [{ x: 65, y: 65, width: 105, height: 105 }]
+},
+{
+  type: "Katakana-Dakuon",
+  character: "ヅ",
+  pronunciation: "",
+  meaning: "Katakana for 'zu'",
+  romaji: "zu",
+  strokes: 3,
+  zones: [{ x: 70, y: 70, width: 110, height: 110 }]
+},
+{
+  type: "Katakana-Dakuon",
+  character: "デ",
+  pronunciation: "",
+  meaning: "Katakana for 'de'",
+  romaji: "de",
+  strokes: 3,
+  zones: [{ x: 75, y: 75, width: 115, height: 115 }]
+},
+{
+  type: "Katakana-Dakuon",
+  character: "ド",
+  pronunciation: "",
+  meaning: "Katakana for 'do'",
+  romaji: "do",
+  strokes: 3,
+  zones: [{ x: 80, y: 80, width: 120, height: 120 }]
+},
+{
+  type: "Katakana-Dakuon",
+  character: "バ",
+  pronunciation: "",
+  meaning: "Katakana for 'ba'",
+  romaji: "ba",
+  strokes: 3,
+  zones: [{ x: 85, y: 85, width: 125, height: 125 }]
+},
+{
+  type: "Katakana-Dakuon",
+  character: "ビ",
+  pronunciation: "",
+  meaning: "Katakana for 'bi'",
+  romaji: "bi",
+  strokes: 3,
+  zones: [{ x: 90, y: 90, width: 130, height: 130 }]
+},
+{
+  type: "Katakana-Dakuon",
+  character: "ブ",
+  pronunciation: "",
+  meaning: "Katakana for 'bu'",
+  romaji: "bu",
+  strokes: 3,
+  zones: [{ x: 95, y: 95, width: 135, height: 135 }]
+},
+{
+  type: "Katakana-Dakuon",
+  character: "ベ",
+  pronunciation: "",
+  meaning: "Katakana for 'be'",
+  romaji: "be",
+  strokes: 3,
+  zones: [{ x: 100, y: 100, width: 140, height: 140 }]
+},
+{
+  type: "Katakana-Dakuon",
+  character: "ボ",
+  pronunciation: "",
+  meaning: "Katakana for 'bo'",
+  romaji: "bo",
+  strokes: 3,
+  zones: [{ x: 105, y: 105, width: 145, height: 145 }]
+},
+{
+  type: "Katakana-Handakuon",
+  character: "パ",
+  pronunciation: "",
+  meaning: "Katakana for 'pa'",
+  romaji: "pa",
+  strokes: 3,
+  zones: [{ x: 10, y: 10, width: 50, height: 50 }]
+},
+{
+  type: "Katakana-Handakuon",
+  character: "ピ",
+  pronunciation: "",
+  meaning: "Katakana for 'pi'",
+  romaji: "pi",
+  strokes: 3,
+  zones: [{ x: 15, y: 15, width: 55, height: 55 }]
+},
+{
+  type: "Katakana-Handakuon",
+  character: "プ",
+  pronunciation: "",
+  meaning: "Katakana for 'pu'",
+  romaji: "pu",
+  strokes: 3,
+  zones: [{ x: 20, y: 20, width: 60, height: 60 }]
+},
+{
+  type: "Katakana-Handakuon",
+  character: "ペ",
+  pronunciation: "",
+  meaning: "Katakana for 'pe'",
+  romaji: "pe",
+  strokes: 3,
+  zones: [{ x: 25, y: 25, width: 65, height: 65 }]
+},
+{
+  type: "Katakana-Handakuon",
+  character: "ポ",
+  pronunciation: "",
+  meaning: "Katakana for 'po'",
+  romaji: "po",
+  strokes: 3,
+  zones: [{ x: 30, y: 30, width: 70, height: 70 }]
 }
   
 ];
