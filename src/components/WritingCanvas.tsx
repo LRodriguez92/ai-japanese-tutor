@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
-import flashcards from '../data/flashcardData'; // Adjust the import path as needed
-
+import hiraganaKatakanaData from '../data/flashcardData';
+import kanjiData from '../data/flashcardDataKanji';
 interface Zone {
   x: number;
   y: number;
@@ -16,6 +16,7 @@ interface StrokePoint {
 interface Flashcard {
   character: string;
   zones: Zone[];
+  type: string;
   // ... other properties
 }
 
@@ -24,7 +25,8 @@ const WritingCanvas = () => {
   const [allStrokes, setAllStrokes] = useState<Array<Array<StrokePoint>>>([]);
   const [currentStroke, setCurrentStroke] = useState<Array<StrokePoint>>([]);
   const [isDrawing, setIsDrawing] = useState(false);
-  const [currentCharacter, setCurrentCharacter] = useState<Flashcard>(flashcards[0]);
+  const allFlashcards = [...hiraganaKatakanaData, ...kanjiData];
+  const [currentCharacter, setCurrentCharacter] = useState<Flashcard>(allFlashcards[0]);
 
   const startDrawing = (e: React.MouseEvent<HTMLCanvasElement, MouseEvent>) => {
     setIsDrawing(true);
@@ -110,13 +112,26 @@ const WritingCanvas = () => {
   };
 
   const renderButtons = (type: string) => {
-    return flashcards
-      .filter(card => card.type === type)
-      .map((card, index) => (
-        <button key={index} onClick={() => selectCharacter(card)}>
-          {card.character}
-        </button>
-      ));
+    let dataToUse: Flashcard[] = [];
+  switch (type) {
+    case "Hiragana":
+    case "Katakana":
+      dataToUse = allFlashcards;
+      break;
+    case "Kanji":
+      dataToUse = kanjiData;
+      break;
+    default:
+      break;
+  }
+  
+  return dataToUse
+    .filter(card => card.type === type)
+    .map((card, index) => (
+      <button key={index} onClick={() => selectCharacter(card)}>
+        {card.character}
+      </button>
+    ));
   };
 
   return (

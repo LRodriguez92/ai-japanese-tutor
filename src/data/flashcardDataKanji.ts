@@ -919,3 +919,5 @@ export const kanjiData = [
       }
       
 ]
+
+export default kanjiData;
