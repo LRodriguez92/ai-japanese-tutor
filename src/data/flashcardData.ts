@@ -1573,8 +1573,304 @@ export const flashcards = [
   romaji: "po",
   strokes: 3,
   zones: [{ x: 30, y: 30, width: 70, height: 70 }]
-}
-  
+},
+{
+  type: "Katakana-Yoon",
+  character: "キャ",
+  pronunciation: "",
+  meaning: "Katakana for 'kya'",
+  romaji: "kya",
+  strokes: 3,
+  zones: [{ x: 10, y: 10, width: 50, height: 50 }]
+},
+{
+  type: "Katakana-Yoon",
+  character: "キュ",
+  pronunciation: "",
+  meaning: "Katakana for 'kyu'",
+  romaji: "kyu",
+  strokes: 3,
+  zones: [{ x: 15, y: 15, width: 55, height: 55 }]
+},
+{
+  type: "Katakana-Yoon",
+  character: "キョ",
+  pronunciation: "",
+  meaning: "Katakana for 'kyo'",
+  romaji: "kyo",
+  strokes: 3,
+  zones: [{ x: 20, y: 20, width: 60, height: 60 }]
+},
+{
+  type: "Katakana-Yoon",
+  character: "シャ",
+  pronunciation: "",
+  meaning: "Katakana for 'sha'",
+  romaji: "sha",
+  strokes: 3,
+  zones: [{ x: 25, y: 25, width: 65, height: 65 }]
+},
+{
+  type: "Katakana-Yoon",
+  character: "シュ",
+  pronunciation: "",
+  meaning: "Katakana for 'shu'",
+  romaji: "shu",
+  strokes: 3,
+  zones: [{ x: 30, y: 30, width: 70, height: 70 }]
+},
+{
+  type: "Katakana-Yoon",
+  character: "ショ",
+  pronunciation: "",
+  meaning: "Katakana for 'sho'",
+  romaji: "sho",
+  strokes: 3,
+  zones: [{ x: 35, y: 35, width: 75, height: 75 }]
+},
+{
+  type: "Katakana-Yoon",
+  character: "チャ",
+  pronunciation: "",
+  meaning: "Katakana for 'cha'",
+  romaji: "cha",
+  strokes: 3,
+  zones: [{ x: 40, y: 40, width: 80, height: 80 }]
+},
+{
+  type: "Katakana-Yoon",
+  character: "チュ",
+  pronunciation: "",
+  meaning: "Katakana for 'chu'",
+  romaji: "chu",
+  strokes: 3,
+  zones: [{ x: 45, y: 45, width: 85, height: 85 }]
+},
+{
+  type: "Katakana-Yoon",
+  character: "チョ",
+  pronunciation: "",
+  meaning: "Katakana for 'cho'",
+  romaji: "cho",
+  strokes: 3,
+  zones: [{ x: 50, y: 50, width: 90, height: 90 }]
+},
+{
+  type: "Katakana-Yoon",
+  character: "ニャ",
+  pronunciation: "",
+  meaning: "Katakana for 'nya'",
+  romaji: "nya",
+  strokes: 3,
+  zones: [{ x: 55, y: 55, width: 95, height: 95 }]
+},
+{
+  type: "Katakana-Yoon",
+  character: "ニュ",
+  pronunciation: "",
+  meaning: "Katakana for 'nyu'",
+  romaji: "nyu",
+  strokes: 3,
+  zones: [{ x: 60, y: 60, width: 100, height: 100 }]
+},
+{
+  type: "Katakana-Yoon",
+  character: "ニョ",
+  pronunciation: "",
+  meaning: "Katakana for 'nyo'",
+  romaji: "nyo",
+  strokes: 3,
+  zones: [{ x: 65, y: 65, width: 105, height: 105 }]
+},
+{
+  type: "Katakana-Yoon",
+  character: "ヒャ",
+  pronunciation: "",
+  meaning: "Katakana for 'hya'",
+  romaji: "hya",
+  strokes: 3,
+  zones: [{ x: 70, y: 70, width: 110, height: 110 }]
+},
+{
+  type: "Katakana-Yoon",
+  character: "ヒュ",
+  pronunciation: "",
+  meaning: "Katakana for 'hyu'",
+  romaji: "hyu",
+  strokes: 3,
+  zones: [{ x: 75, y: 75, width: 115, height: 115 }]
+},
+{
+  type: "Katakana-Yoon",
+  character: "ヒョ",
+  pronunciation: "",
+  meaning: "Katakana for 'hyo'",
+  romaji: "hyo",
+  strokes: 3,
+  zones: [{ x: 80, y: 80, width: 120, height: 120 }]
+},
+{
+  type: "Katakana-Yoon",
+  character: "ミャ",
+  pronunciation: "",
+  meaning: "Katakana for 'mya'",
+  romaji: "mya",
+  strokes: 3,
+  zones: [{ x: 85, y: 85, width: 125, height: 125 }]
+},
+{
+  type: "Katakana-Yoon",
+  character: "ミュ",
+  pronunciation: "",
+  meaning: "Katakana for 'myu'",
+  romaji: "myu",
+  strokes: 3,
+  zones: [{ x: 90, y: 90, width: 130, height: 130 }]
+},
+{
+  type: "Katakana-Yoon",
+  character: "ミョ",
+  pronunciation: "",
+  meaning: "Katakana for 'myo'",
+  romaji: "myo",
+  strokes: 3,
+  zones: [{ x: 95, y: 95, width: 135, height: 135 }]
+},
+{
+  type: "Katakana-Yoon",
+  character: "リャ",
+  pronunciation: "",
+  meaning: "Katakana for 'rya'",
+  romaji: "rya",
+  strokes: 3,
+  zones: [{ x: 100, y: 100, width: 140, height: 140 }]
+},
+{
+  type: "Katakana-Yoon",
+  character: "リュ",
+  pronunciation: "",
+  meaning: "Katakana for 'ryu'",
+  romaji: "ryu",
+  strokes: 3,
+  zones: [{ x: 105, y: 105, width: 145, height: 145 }]
+},
+{
+  type: "Katakana-Yoon",
+  character: "リョ",
+  pronunciation: "",
+  meaning: "Katakana for 'ryo'",
+  romaji: "ryo",
+  strokes: 3,
+  zones: [{ x: 110, y: 110, width: 150, height: 150 }]
+},
+{
+  type: "Katakana-Yoon",
+  character: "ギャ",
+  pronunciation: "",
+  meaning: "Katakana for 'gya'",
+  romaji: "gya",
+  strokes: 3,
+  zones: [{ x: 115, y: 115, width: 155, height: 155 }]
+},
+{
+  type: "Katakana-Yoon",
+  character: "ギュ",
+  pronunciation: "",
+  meaning: "Katakana for 'gyu'",
+  romaji: "gyu",
+  strokes: 3,
+  zones: [{ x: 120, y: 120, width: 160, height: 160 }]
+},
+{
+  type: "Katakana-Yoon",
+  character: "ギョ",
+  pronunciation: "",
+  meaning: "Katakana for 'gyo'",
+  romaji: "gyo",
+  strokes: 3,
+  zones: [{ x: 125, y: 125, width: 165, height: 165 }]
+},
+{
+  type: "Katakana-Yoon",
+  character: "ジャ",
+  pronunciation: "",
+  meaning: "Katakana for 'ja'",
+  romaji: "ja",
+  strokes: 3,
+  zones: [{ x: 130, y: 130, width: 170, height: 170 }]
+},
+{
+  type: "Katakana-Yoon",
+  character: "ジュ",
+  pronunciation: "",
+  meaning: "Katakana for 'ju'",
+  romaji: "ju",
+  strokes: 3,
+  zones: [{ x: 135, y: 135, width: 175, height: 175 }]
+},
+{
+  type: "Katakana-Yoon",
+  character: "ジョ",
+  pronunciation: "",
+  meaning: "Katakana for 'jo'",
+  romaji: "jo",
+  strokes: 3,
+  zones: [{ x: 140, y: 140, width: 180, height: 180 }]
+},
+{
+  type: "Katakana-Yoon",
+  character: "ビャ",
+  pronunciation: "",
+  meaning: "Katakana for 'bya'",
+  romaji: "bya",
+  strokes: 3,
+  zones: [{ x: 145, y: 145, width: 185, height: 185 }]
+},
+{
+  type: "Katakana-Yoon",
+  character: "ビュ",
+  pronunciation: "",
+  meaning: "Katakana for 'byu'",
+  romaji: "byu",
+  strokes: 3,
+  zones: [{ x: 150, y: 150, width: 190, height: 190 }]
+},
+{
+  type: "Katakana-Yoon",
+  character: "ビョ",
+  pronunciation: "",
+  meaning: "Katakana for 'byo'",
+  romaji: "byo",
+  strokes: 3,
+  zones: [{ x: 155, y: 155, width: 195, height: 195 }]
+},
+{
+  type: "Katakana-Yoon",
+  character: "ピャ",
+  pronunciation: "",
+  meaning: "Katakana for 'pya'",
+  romaji: "pya",
+  strokes: 3,
+  zones: [{ x: 160, y: 160, width: 200, height: 200 }]
+},
+{
+  type: "Katakana-Yoon",
+  character: "ピュ",
+  pronunciation: "",
+  meaning: "Katakana for 'pyu'",
+  romaji: "pyu",
+  strokes: 3,
+  zones: [{ x: 165, y: 165, width: 205, height: 205 }]
+},
+{
+  type: "Katakana-Yoon",
+  character: "ピョ",
+  pronunciation: "",
+  meaning: "Katakana for 'pyo'",
+  romaji: "pyo",
+  strokes: 3,
+  zones: [{ x: 170, y: 170, width: 210, height: 210 }]
+}  
 ];
 
 export default flashcards;
