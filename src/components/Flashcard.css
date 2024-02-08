@@ -6,15 +6,16 @@
   }
   
   .flashcard {
-    width: 200px;
+    width: 300px;
     height: 300px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
+    border: 35px solid #73d2cc;
+    border-radius: 50%;
     text-align: center;
     transition: transform 0.6s;
     transform-style: preserve-3d;
     cursor: pointer;
     margin-bottom: 15px;
+    /* overflow: hidden; */
   }
   
   .flashcard.flipped {
@@ -30,31 +31,31 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border-radius: 50%;
   }
   
   .front {
-    background-color: #282C34;
+    background-color: #daeee2;
   }
   
   .back {
-    background-color: #007bff;
-    color: white;
+    background-color: #daeee2;
     transform: rotateY(180deg); /* Flip the backside */
   }
   
   .character {
-    font-size: 36px;
+    /* font-size: 180px; Modify inline in component */
+    text-shadow: 3px 7px white;
     margin-bottom: 10px;
   }
   
   .pronunciation, .meaning {
-    font-size: 18px;
+    font-size: 34px;
   }
 
   .romaji {
-    font-size: 16px;
+    font-size: 50px;
     margin-top: 10px;
-    color: #f8f8f8; /* Adjust color as needed */
   }
   
   .navigation button {

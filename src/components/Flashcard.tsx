@@ -29,7 +29,7 @@ const Flashcard = () => {
     <div className="flashcard-container">
       <div className={`flashcard ${isFlipped ? 'flipped' : ''}`} onClick={handleFlip}>
         <div className="front">
-          <div className="character">{character}</div>
+          <div className="character" style={{ fontSize: allFlashcards[currentIndex].type === "Kanji" ? "130px" : "220px" }}>{character}</div>
           <div className="pronunciation">{pronunciation}</div>
         </div>
         <div className="back">

@@ -1,9 +1,10 @@
 import React from "react";
+import "./FlashcardPage.css";
 import Flashcard from "../components/Flashcard";
 
 const FlashcardPage = () => {
     return (
-        <div>
+        <div className="main-container">
             <Flashcard />
         </div>
     );
