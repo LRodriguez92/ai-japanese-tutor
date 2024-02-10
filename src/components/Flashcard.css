@@ -8,7 +8,7 @@
   .flashcard {
     width: 300px;
     height: 300px;
-    border: 35px solid #73d2cc;
+    border: 35px solid #339989;
     border-radius: 50%;
     text-align: center;
     transition: transform 0.6s;
@@ -35,17 +35,18 @@
   }
   
   .front {
-    background-color: #daeee2;
+    background-color: #7de2d1;
   }
   
   .back {
-    background-color: #daeee2;
+    background-color: #7de2d1;
     transform: rotateY(180deg); /* Flip the backside */
+    text-shadow: 3px 3px white;
   }
   
   .character {
     /* font-size: 180px; Modify inline in component */
-    text-shadow: 3px 7px white;
+    text-shadow: 3px 3px white;
     margin-bottom: 10px;
   }
   
@@ -71,4 +72,5 @@
   .navigation button:hover {
     background-color: #0056b3;
   }
+  
   
