@@ -30,6 +30,11 @@ export const CharacterSelectionModal: React.FC<CharacterSelectionModalProps> = (
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, checked } = event.target;
+    const currentlyChecked = Object.values(filterOptions).filter(value => value).length;
+    if (!checked && currentlyChecked === 1) {
+        alert("At least one character type must be selected.");
+        return; // Stop the function from proceeding further
+    }
     setFilterOptions(prev => ({ ...prev, [name]: checked }));
   };
 
