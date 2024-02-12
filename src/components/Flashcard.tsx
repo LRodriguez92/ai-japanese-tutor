@@ -60,7 +60,7 @@ const Flashcard = () => {
       <div className="flashcard-container">
         <div className={`flashcard ${isFlipped ? 'flipped' : ''}`} onClick={handleFlip}>
           <div className="front">
-            <div className="character" style={{ fontSize: filteredFlashcards[currentIndex].type === "Kanji" ? "130px" : "220px" }}>{character}</div>
+          <div className="character" style={{ fontSize: filteredFlashcards[currentIndex].type === "Kanji" ? "130px" : (filteredFlashcards[currentIndex].type === "Hiragana-Yoon" || filteredFlashcards[currentIndex].type === "Katakana-Yoon") ? "150px" : "220px" }}>{character}</div>
             <div className="pronunciation">{pronunciation}</div>
           </div>
           <div className="back">
