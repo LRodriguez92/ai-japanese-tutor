@@ -63,7 +63,7 @@ const Flashcard = () => {
     } else {
         // Reset to original order and set currentIndex to 0 to show the first character
         setShuffledIndexes([]);
-        setCurrentIndex(0); // Reset currentIndex to 0
+        setCurrentIndex(0);
     }
   };
 
@@ -73,7 +73,7 @@ const Flashcard = () => {
     return filteredFlashcards[index];
   };
 
-  const { character, pronunciation, meaning, romaji } = getCurrentCard();
+  const { character, pronunciation, meaning, romaji, type } = getCurrentCard();
 
   const handleFlip = () => setIsFlipped(!isFlipped);;
 
@@ -98,7 +98,7 @@ const Flashcard = () => {
         </button>
         <div className={`flashcard ${isFlipped ? 'flipped' : ''}`} onClick={handleFlip}>
           <div className="front">
-          <div className="character" style={{ fontSize: filteredFlashcards[currentIndex].type === "Kanji" ? "130px" : (filteredFlashcards[currentIndex].type === "Hiragana-Yoon" || filteredFlashcards[currentIndex].type === "Katakana-Yoon") ? "150px" : "220px" }}>{character}</div>
+          <div className="character" style={{ fontSize: type === "Kanji" ? "130px" : (type === "Hiragana-Yoon" || type === "Katakana-Yoon") ? "150px" : "220px" }}>{character}</div>
             <div className="pronunciation">{pronunciation}</div>
           </div>
           <div className="back">
