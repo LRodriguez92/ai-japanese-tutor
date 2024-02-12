@@ -26,6 +26,7 @@ export const CharacterSelectionModal: React.FC<CharacterSelectionModalProps> = (
   setFilterOptions,
   closeModal,
 }) => {
+
   if (!showModal) return null;
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -36,6 +37,34 @@ export const CharacterSelectionModal: React.FC<CharacterSelectionModalProps> = (
         return; // Stop the function from proceeding further
     }
     setFilterOptions(prev => ({ ...prev, [name]: checked }));
+  };
+
+  const handleCheckAll = () => {
+    setFilterOptions({
+      Hiragana: true,
+      Katakana: true,
+      Kanji: true,
+      "Hiragana-Dakuon": true,
+      "Hiragana-Handakuon": true,
+      "Hiragana-Yoon": true,
+      "Katakana-Dakuon": true,
+      "Katakana-Handakuon": true,
+      "Katakana-Yoon": true,
+    });
+  };
+  
+  const handleUncheckAll = () => {
+    setFilterOptions({
+      Hiragana: true, // Keep Hiragana checked
+      Katakana: false,
+      Kanji: false,
+      "Hiragana-Dakuon": false,
+      "Hiragana-Handakuon": false,
+      "Hiragana-Yoon": false,
+      "Katakana-Dakuon": false,
+      "Katakana-Handakuon": false,
+      "Katakana-Yoon": false,
+    });
   };
 
   return (
@@ -131,11 +160,12 @@ export const CharacterSelectionModal: React.FC<CharacterSelectionModalProps> = (
           </form>
         </div>
         <div className="modal-footer">
-          <button onClick={closeModal}>Cancel</button>
-          <button onClick={() => {
+            <button onClick={handleCheckAll}>Check All</button>
+            <button onClick={handleUncheckAll}>Uncheck All</button>
+            <button onClick={() => {
             setFilterOptions(filterOptions);
             closeModal();
-          }}>Apply</button>
+            }}>Close</button>
         </div>
       </div>
     </div>
