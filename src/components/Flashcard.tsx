@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { hiraganaKatakanaData } from '../data/flashcardData'; // Adjust the path as needed
 import { kanjiData } from '../data/flashcardDataKanji'; // Import Kanji data
 import { CharacterSelectionModal, FilterOptions } from './CharacterSelectionModal';
@@ -7,20 +7,30 @@ import './Flashcard.css';
 import './Flashcard.css';
 
 const Flashcard = () => {
+  const getInitialFilterOptions = (): FilterOptions => {
+    const savedFilters = localStorage.getItem('filterOptions');
+    return savedFilters ? JSON.parse(savedFilters) : {
+      Hiragana: true,
+      Katakana: true,
+      Kanji: true,
+      "Hiragana-Dakuon": true,
+      "Hiragana-Handakuon": true,
+      "Hiragana-Yoon": true,
+      "Katakana-Dakuon": true,
+      "Katakana-Handakuon": true,
+      "Katakana-Yoon": true
+    };
+  };
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isFlipped, setIsFlipped] = useState(false);
   const [showModal, setShowModal] = useState(false);
-  const [filterOptions, setFilterOptions] = useState<FilterOptions>({
-    Hiragana: true,
-    Katakana: true,
-    Kanji: true,
-    "Hiragana-Dakuon": true,
-    "Hiragana-Handakuon": true,
-    "Hiragana-Yoon": true,
-    "Katakana-Dakuon": true,
-    "Katakana-Handakuon": true,
-    "Katakana-Yoon": true
-  });
+  const [filterOptions, setFilterOptions] = useState<FilterOptions>(getInitialFilterOptions());
+
+  useEffect(() => {
+    // Save to localStorage whenever filterOptions changes
+    localStorage.setItem('filterOptions', JSON.stringify(filterOptions));
+  }, [filterOptions]);
 
   // Combine Hiragana/Katakana and Kanji data
   const allFlashcards = [...hiraganaKatakanaData, ...kanjiData];
@@ -29,6 +39,7 @@ const Flashcard = () => {
     return option !== undefined ? option : false; // Default to false if the type does not exist in filterOptions
   });
   const { character, pronunciation, meaning, romaji } = filteredFlashcards[currentIndex % filteredFlashcards.length]; // Adjust currentIndex with modulo for cycling through filtered flashcards
+  
   const handleFlip = () => setIsFlipped(!isFlipped);;
 
   const handleNext = () => {
