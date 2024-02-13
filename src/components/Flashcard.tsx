@@ -93,9 +93,7 @@ const Flashcard = () => {
   return (
     <>
       <div className="flashcard-container">
-        <button onClick={handleShuffle}>
-          <FontAwesomeIcon icon={faShuffle} /> Shuffle
-        </button>
+        <FontAwesomeIcon icon={faShuffle} onClick={handleShuffle} className={`shuffle ${isShuffled ? 'active' : ''}`} />
         <div className={`flashcard ${isFlipped ? 'flipped' : ''}`} onClick={handleFlip}>
           <div className="front">
           <div className="character" style={{ fontSize: type === "Kanji" ? "130px" : (type === "Hiragana-Yoon" || type === "Katakana-Yoon") ? "150px" : "220px" }}>{character}</div>

@@ -75,4 +75,12 @@
     background-color: #56C4B8;
   }
   
-  
+  .shuffle {
+    left: 333px;
+    position: absolute;
+    font-size: 30px;
+  }
+
+  .shuffle.active {
+    color: #56C4B8;
+  }
