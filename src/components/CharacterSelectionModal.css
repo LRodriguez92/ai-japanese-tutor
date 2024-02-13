@@ -34,3 +34,37 @@
     align-items: center;
     margin-top: 20px;
 }
+
+.modal-footer > button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #7DE2D1;
+    color: #313715;
+    cursor: pointer;
+}
+
+.checkbox-container {
+    display: flex;
+    flex-direction: column;
+    padding-right: 35px;
+    border-left: 1px solid white;
+    font-size: 14px;
+}
+
+.checkbox-container > label:first-child {
+    font-size: 18px;
+    font-weight: bold;
+    color: #39A9DB;
+}
+
+.kanji-container {
+    border-left: 1px solid white;
+    font-size: 18px;
+    font-weight: bold;
+    color: #39A9DB
+}
+
+form {
+    display: flex;
+}

@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faX } from '@fortawesome/free-solid-svg-icons';
+import { faX, faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import './CharacterSelectionModal.css';
 
 interface CharacterSelectionModalProps {
@@ -79,96 +79,98 @@ export const CharacterSelectionModal: React.FC<CharacterSelectionModalProps> = (
         </div>
         <div className="modal-body">
           <form>
-            <label>
-              <input
-                type="checkbox"
-                name="Hiragana"
-                checked={filterOptions.Hiragana}
-                onChange={handleChange}
-              />
-              Hiragana
-            </label>
-            <label>
-              <input
-                type="checkbox"
-                name="Hiragana-Dakuon"
-                checked={filterOptions["Hiragana-Dakuon"]}
-                onChange={handleChange}
-              />
-              Hiragana Dakuon
-            </label>
-            <label>
-              <input
-                type="checkbox"
-                name="Hiragana-Handakuon"
-                checked={filterOptions["Hiragana-Handakuon"]}
-                onChange={handleChange}
-              />
-              Hiragana Handakuon
-            </label>
-            <label>
-              <input
-                type="checkbox"
-                name="Hiragana-Yoon"
-                checked={filterOptions["Hiragana-Yoon"]}
-                onChange={handleChange}
-              />
-              Hiragana Yoon
-            </label>
-            <label>
-              <input
-                type="checkbox"
-                name="Katakana"
-                checked={filterOptions.Katakana}
-                onChange={handleChange}
-              />
-              Katakana
-            </label>
-            <label>
-              <input
-                type="checkbox"
-                name="Katakana-Dakuon"
-                checked={filterOptions["Katakana-Dakuon"]}
-                onChange={handleChange}
-              />
-              Katakana Dakuon
-            </label>
-            <label>
-              <input
-                type="checkbox"
-                name="Katakana-Handakuon"
-                checked={filterOptions["Katakana-Handakuon"]}
-                onChange={handleChange}
-              />
-              Katakana Handakuon
-            </label>
-            <label>
-              <input
-                type="checkbox"
-                name="Katakana-Yoon"
-                checked={filterOptions["Katakana-Yoon"]}
-                onChange={handleChange}
-              />
-              Katakana Yoon
-            </label>
-            <label>
-              <input
-                type="checkbox"
-                name="Kanji"
-                checked={filterOptions.Kanji}
-                onChange={handleChange}
-              />
-              Kanji
-            </label>
+            <div className='checkbox-container'>
+              <label>
+                <input
+                  type="checkbox"
+                  name="Hiragana"
+                  checked={filterOptions.Hiragana}
+                  onChange={handleChange}
+                />
+                Hiragana
+              </label>
+              <label>
+                <input
+                  type="checkbox"
+                  name="Hiragana-Dakuon"
+                  checked={filterOptions["Hiragana-Dakuon"]}
+                  onChange={handleChange}
+                />
+                Dakuon
+              </label>
+              <label>
+                <input
+                  type="checkbox"
+                  name="Hiragana-Handakuon"
+                  checked={filterOptions["Hiragana-Handakuon"]}
+                  onChange={handleChange}
+                />
+                Handakuon
+              </label>
+              <label>
+                <input
+                  type="checkbox"
+                  name="Hiragana-Yoon"
+                  checked={filterOptions["Hiragana-Yoon"]}
+                  onChange={handleChange}
+                />
+                Yoon
+              </label>
+            </div>
+            <div className='checkbox-container'>
+              <label>
+                <input
+                  type="checkbox"
+                  name="Katakana"
+                  checked={filterOptions.Katakana}
+                  onChange={handleChange}
+                />
+                Katakana
+              </label>
+              <label>
+                <input
+                  type="checkbox"
+                  name="Katakana-Dakuon"
+                  checked={filterOptions["Katakana-Dakuon"]}
+                  onChange={handleChange}
+                />
+                Dakuon
+              </label>
+              <label>
+                <input
+                  type="checkbox"
+                  name="Katakana-Handakuon"
+                  checked={filterOptions["Katakana-Handakuon"]}
+                  onChange={handleChange}
+                />
+                Handakuon
+              </label>
+              <label>
+                <input
+                  type="checkbox"
+                  name="Katakana-Yoon"
+                  checked={filterOptions["Katakana-Yoon"]}
+                  onChange={handleChange}
+                />
+                Yoon
+              </label>
+            </div>
+            <div className="kanji-container">
+              <label>
+                <input
+                  type="checkbox"
+                  name="Kanji"
+                  checked={filterOptions.Kanji}
+                  onChange={handleChange}
+                />
+                Kanji
+              </label>
+            </div>
           </form>
         </div>
         <div className="modal-footer">
             <button onClick={handleCheckAll}>Check All</button>
             <button onClick={handleUncheckAll}>Uncheck All</button>
-            <button onClick={() => {
-            setFilterOptions(filterOptions);
-            closeModal();
-            }}>Close</button>
         </div>
       </div>
     </div>
