@@ -15,6 +15,7 @@
     transform-style: preserve-3d;
     cursor: pointer;
     margin-bottom: 15px;
+    box-shadow: 0px 0px 10px 3px #fffafb;
     /* overflow: hidden; */
   }
   
@@ -32,6 +33,7 @@
     justify-content: center;
     align-items: center;
     border-radius: 50%;
+    box-shadow: 0px 0px 10px 3px #fffafb;
   }
   
   .front {
