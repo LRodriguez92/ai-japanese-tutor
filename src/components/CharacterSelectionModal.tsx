@@ -1,4 +1,7 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faX } from '@fortawesome/free-solid-svg-icons';
+import './CharacterSelectionModal.css';
 
 interface CharacterSelectionModalProps {
   showModal: boolean;
@@ -71,8 +74,8 @@ export const CharacterSelectionModal: React.FC<CharacterSelectionModalProps> = (
     <div className={`modal ${showModal ? 'show' : 'hide'}`}>
       <div className="modal-content">
         <div className="modal-header">
+          <FontAwesomeIcon icon={faX} onClick={closeModal} className="close-button" />
           <h2>Choose Characters</h2>
-          <button onClick={closeModal} className="close-button">X</button>
         </div>
         <div className="modal-body">
           <form>
@@ -84,24 +87,6 @@ export const CharacterSelectionModal: React.FC<CharacterSelectionModalProps> = (
                 onChange={handleChange}
               />
               Hiragana
-            </label>
-            <label>
-              <input
-                type="checkbox"
-                name="Katakana"
-                checked={filterOptions.Katakana}
-                onChange={handleChange}
-              />
-              Katakana
-            </label>
-            <label>
-              <input
-                type="checkbox"
-                name="Kanji"
-                checked={filterOptions.Kanji}
-                onChange={handleChange}
-              />
-              Kanji
             </label>
             <label>
               <input
@@ -133,6 +118,15 @@ export const CharacterSelectionModal: React.FC<CharacterSelectionModalProps> = (
             <label>
               <input
                 type="checkbox"
+                name="Katakana"
+                checked={filterOptions.Katakana}
+                onChange={handleChange}
+              />
+              Katakana
+            </label>
+            <label>
+              <input
+                type="checkbox"
                 name="Katakana-Dakuon"
                 checked={filterOptions["Katakana-Dakuon"]}
                 onChange={handleChange}
@@ -156,6 +150,15 @@ export const CharacterSelectionModal: React.FC<CharacterSelectionModalProps> = (
                 onChange={handleChange}
               />
               Katakana Yoon
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                name="Kanji"
+                checked={filterOptions.Kanji}
+                onChange={handleChange}
+              />
+              Kanji
             </label>
           </form>
         </div>
