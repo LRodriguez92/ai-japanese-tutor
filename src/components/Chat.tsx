@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
-import './Chat.css';
 import InfoModal from './InfoModal';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMicrophone } from '@fortawesome/free-solid-svg-icons';
+import './Chat.css';
 
 interface ChatMessage {
   sender: 'user' | 'ai';
@@ -86,6 +88,7 @@ const Chat: React.FC = () => {
           onKeyDown={handleKeyDown}
           placeholder="Type your message"
         />
+        <FontAwesomeIcon icon={faMicrophone} className='microphone'/>
         <button onClick={sendMessage}>Send</button>
       </div>
     </div>

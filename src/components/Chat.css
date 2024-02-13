@@ -63,7 +63,9 @@
 
 .input-area {
   display: flex;
+  align-items: center;
 }
+
 
 input[type="text"] {
   flex-grow: 1;
@@ -122,3 +124,6 @@ button:hover {
   margin-top: -8px;
 }
 
+.microphone {
+  font-size: 25px;
+}
