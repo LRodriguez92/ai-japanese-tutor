@@ -60,9 +60,15 @@
     font-size: 50px;
     margin-top: 10px;
   }
-  
+
+  .navigation {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+
   .navigation button {
-    margin: 5px;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -71,10 +77,18 @@
     cursor: pointer;
   }
   
-  .navigation button:hover {
-    background-color: #56C4B8;
+  .navigation .arrows {
+    margin: 5px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 40px;
   }
   
+  .navigation .arrows:hover {
+    color: #7DE2D1;
+  }
+
   .shuffle {
     left: 333px;
     position: absolute;

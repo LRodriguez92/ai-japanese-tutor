@@ -3,7 +3,7 @@ import { hiraganaKatakanaData } from '../data/flashcardData'; // Adjust the path
 import { kanjiData } from '../data/flashcardDataKanji'; // Import Kanji data
 import { CharacterSelectionModal, FilterOptions } from './CharacterSelectionModal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShuffle } from '@fortawesome/free-solid-svg-icons';
+import { faShuffle, faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import './Flashcard.css';
 
 import './Flashcard.css';
@@ -105,10 +105,10 @@ const Flashcard = () => {
           </div>
         </div>
         <div className="navigation">
-          <button onClick={handlePrevious}>Previous</button>
-          <button onClick={handleNext}>Next</button>
+          <FontAwesomeIcon icon={faArrowLeft} onClick={handlePrevious} className='arrows' />
+          <button onClick={handleCharacterSelectionClick}>Choose Characters</button>
+          <FontAwesomeIcon icon={faArrowRight} onClick={handleNext} className='arrows' />
         </div>
-        <button onClick={handleCharacterSelectionClick}>Choose Characters</button>
       </div>
       <CharacterSelectionModal
         showModal={showModal}
