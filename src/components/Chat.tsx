@@ -61,6 +61,9 @@ const Chat: React.FC = () => {
         })
         .catch(error => {
           console.error("Error accessing the microphone:", error);
+          alert("Error accessing the microphone. Please ensure it is not being used by another application and try again.");
+          setIsRecording(false);
+          setRecordingStatus('idle');
         });
     } else if (recordingStatus === 'recording' && mediaRecorder) {
       // Stop recording
@@ -72,27 +75,36 @@ const Chat: React.FC = () => {
 
   const sendRecordedAudioMessage = async () => {
     if (!recordedAudio) return;
-  
+
     try {
       const formData = new FormData();
       formData.append('audio', recordedAudio);
-  
+
       // Assuming your backend is set up to handle audio file uploads and conversion
       const response = await axios.post('http://localhost:3001/api/openai/audio', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
       });
-  
+
       const { japanese, english } = response.data;
-      setChatHistory(prev => [...prev, { sender: 'ai', text: { japanese, english }, showEnglish: false }]);
-      // Reset the recorded audio and status after sending
+      setChatHistory(prev => [...prev, { 
+        sender: 'ai', 
+        text: { japanese, english }, 
+        showEnglish: false 
+      }]);
+      // Reset the recorded audio, recording status, and audio URL after sending
       setRecordedAudio(null);
       setRecordingStatus('idle');
+      setAudioBlobUrl('');
     } catch (error) {
       console.error('Error sending audio message:', error);
+      alert("Error sending audio message. Please try again.");
+      setIsRecording(false);
+      setRecordingStatus('idle');
     }
   };
+
 
   const scrollToBottom = () => {
     const chatHistoryEl = chatHistoryRef.current;
