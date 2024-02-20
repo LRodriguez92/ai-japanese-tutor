@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import InfoModal from './InfoModal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMicrophone } from '@fortawesome/free-solid-svg-icons';
+import { faMicrophone, faStop } from '@fortawesome/free-solid-svg-icons';
 import './Chat.css';
 
 interface ChatMessage {
@@ -11,6 +11,7 @@ interface ChatMessage {
     japanese: string;
     english: string;
   };
+  audioUrl?: string; // URL for playing back the audio
   showEnglish: boolean;
 }
 
@@ -22,7 +23,76 @@ const Chat: React.FC = () => {
     return localStorage.getItem('showModal') !== 'false';
   });
 
+  // Audio state
+  const [isRecording, setIsRecording] = useState<boolean>(false);
+  const [mediaRecorder, setMediaRecorder] = useState<MediaRecorder | null>(null);
+  const [audioBlobUrl, setAudioBlobUrl] = useState<string>('');
+
+  const [recordingStatus, setRecordingStatus] = useState<'idle' | 'recording' | 'recorded'>('idle');
+  const [recordedAudio, setRecordedAudio] = useState<Blob | null>(null);
+
   const chatHistoryRef = useRef<HTMLDivElement>(null);
+
+  const toggleRecording = () => {
+    if (recordingStatus === 'idle' || recordingStatus === 'recorded') {
+      // Start recording
+      setIsRecording(true);
+      navigator.mediaDevices.getUserMedia({ audio: true })
+        .then(stream => {
+          const newMediaRecorder = new MediaRecorder(stream);
+          setMediaRecorder(newMediaRecorder);
+  
+          const audioChunks: BlobPart[] = [];
+          newMediaRecorder.ondataavailable = (event) => {
+            audioChunks.push(event.data);
+          };
+  
+          newMediaRecorder.onstop = () => {
+            const audioBlob = new Blob(audioChunks, { 'type' : 'audio/wav' });
+            setRecordedAudio(audioBlob);
+            const audioUrl = URL.createObjectURL(audioBlob);
+            setAudioBlobUrl(audioUrl);
+            // Update recording status to 'recorded' but don't send automatically
+            setRecordingStatus('recorded');
+          };
+  
+          newMediaRecorder.start();
+          setRecordingStatus('recording');
+        })
+        .catch(error => {
+          console.error("Error accessing the microphone:", error);
+        });
+    } else if (recordingStatus === 'recording' && mediaRecorder) {
+      // Stop recording
+      setIsRecording(false);
+      mediaRecorder.stop();
+      setRecordingStatus('idle');
+    }
+  };
+
+  const sendRecordedAudioMessage = async () => {
+    if (!recordedAudio) return;
+  
+    try {
+      const formData = new FormData();
+      formData.append('audio', recordedAudio);
+  
+      // Assuming your backend is set up to handle audio file uploads and conversion
+      const response = await axios.post('http://localhost:3001/api/openai/audio', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      });
+  
+      const { japanese, english } = response.data;
+      setChatHistory(prev => [...prev, { sender: 'ai', text: { japanese, english }, showEnglish: false }]);
+      // Reset the recorded audio and status after sending
+      setRecordedAudio(null);
+      setRecordingStatus('idle');
+    } catch (error) {
+      console.error('Error sending audio message:', error);
+    }
+  };
 
   const scrollToBottom = () => {
     const chatHistoryEl = chatHistoryRef.current;
@@ -32,7 +102,7 @@ const Chat: React.FC = () => {
   };
   
   const sendMessage = async () => {
-    if (!input.trim()) return;
+    if (!input.trim() && !recordedAudio) return;
     const userMessage: string = input;
     setChatHistory(prev => [...prev, { sender: 'user', text: { japanese: userMessage, english: '' }, showEnglish: false }]);
     setInput('');
@@ -88,8 +158,14 @@ const Chat: React.FC = () => {
           onKeyDown={handleKeyDown}
           placeholder="Type your message"
         />
-        <FontAwesomeIcon icon={faMicrophone} className='microphone'/>
-        <button onClick={sendMessage}>Send</button>
+        <FontAwesomeIcon 
+          onClick={toggleRecording}
+          icon={isRecording ? faStop : faMicrophone}
+          className='microphone'
+        />
+        <button onClick={recordedAudio ? sendRecordedAudioMessage : sendMessage}>
+          {recordedAudio ? "Send Audio" : "Send"}
+        </button>
       </div>
     </div>
   );
