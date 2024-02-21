@@ -124,10 +124,8 @@ button:hover {
   margin-top: -8px;
 }
 
-.microphone {
-  font-size: 20px;
-  position: relative;
-  right: 20px;
+.icon-button {
+  margin: 0 10px;
 }
 
 .waveform-container {
@@ -136,6 +134,6 @@ button:hover {
 }
 
 .playback-button {
-  padding: 8px 16px;
+  padding: 8px 5px;
   cursor: pointer;
 }

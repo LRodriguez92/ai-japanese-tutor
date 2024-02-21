@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import InfoModal from './InfoModal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMicrophone, faStop, faPlay, faPause } from '@fortawesome/free-solid-svg-icons';
+import { faMicrophone, faStop, faPlay, faPause, faTrash } from '@fortawesome/free-solid-svg-icons';
 import WaveSurfer from 'wavesurfer.js';
 import './Chat.css';
 
@@ -99,7 +99,7 @@ const Chat: React.FC = () => {
         showEnglish: false 
       }]);
       // Reset the recorded audio, recording status, and audio URL after sending
-      resetAudioInput()
+      deleteRecording()
     } catch (error) {
       console.error('Error sending audio message:', error);
       alert("Error sending audio message. Please try again.");
@@ -108,7 +108,7 @@ const Chat: React.FC = () => {
     }
   };
 
-  const resetAudioInput = () => {
+  const deleteRecording = () => {
     if (waveSurfer) {
       waveSurfer.destroy();
       setWaveSurfer(null);
@@ -116,6 +116,7 @@ const Chat: React.FC = () => {
     setRecordingStatus('idle');
     setAudioBlobUrl('');
     setRecordedAudio(null);
+    setIsRecording(false);
   };
 
   const togglePlayback = () => {
@@ -233,9 +234,9 @@ const Chat: React.FC = () => {
           />
         )}
         <FontAwesomeIcon 
-          onClick={toggleRecording}
-          icon={isRecording ? faStop : faMicrophone}
-          className='microphone'
+          onClick={recordingStatus === 'recorded' ? deleteRecording : toggleRecording}
+          icon={recordingStatus === 'recorded' ? faTrash : (isRecording ? faStop : faMicrophone)}
+          className='icon-button'
         />
         <button onClick={recordedAudio ? sendRecordedAudioMessage : sendMessage}>
           {recordedAudio ? "Send Audio" : "Send"}
