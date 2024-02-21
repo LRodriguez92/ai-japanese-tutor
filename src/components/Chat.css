@@ -79,14 +79,14 @@ input[type="text"] {
 button {
   padding: 8px 15px;
   border: none;
-  background-color: #007bff;
+  background-color: #399989;
   color: white;
   border-radius: 5px;
   cursor: pointer;
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #7DE2D1;
 }
 
 .message-container {

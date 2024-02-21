@@ -174,9 +174,9 @@ const Chat: React.FC = () => {
       console.log('Initializing WaveSurfer');
         const ws: WaveSurfer = WaveSurfer.create({
             container: waveformRef.current,
-            waveColor: 'violet',
-            progressColor: 'purple',
-            cursorColor: 'navy',
+            waveColor: '#7DE2D1',
+            progressColor: '#FFFAFB',
+            cursorColor: 'white',
             barWidth: 2,
             barRadius: 3,
             height: 50,
