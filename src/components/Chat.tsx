@@ -3,6 +3,7 @@ import axios from 'axios';
 import InfoModal from './InfoModal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMicrophone, faStop } from '@fortawesome/free-solid-svg-icons';
+import WaveSurfer from 'wavesurfer.js';
 import './Chat.css';
 
 interface ChatMessage {
@@ -30,6 +31,9 @@ const Chat: React.FC = () => {
 
   const [recordingStatus, setRecordingStatus] = useState<'idle' | 'recording' | 'recorded'>('idle');
   const [recordedAudio, setRecordedAudio] = useState<Blob | null>(null);
+
+  const waveformRef = useRef(null); // Ref for the waveform container
+  const [waveSurfer, setWaveSurfer] = useState<any>(null); // To store the WaveSurfer instance
 
   const chatHistoryRef = useRef<HTMLDivElement>(null);
 
@@ -94,15 +98,23 @@ const Chat: React.FC = () => {
         showEnglish: false 
       }]);
       // Reset the recorded audio, recording status, and audio URL after sending
-      setRecordedAudio(null);
-      setRecordingStatus('idle');
-      setAudioBlobUrl('');
+      resetAudioInput()
     } catch (error) {
       console.error('Error sending audio message:', error);
       alert("Error sending audio message. Please try again.");
       setIsRecording(false);
       setRecordingStatus('idle');
     }
+  };
+
+  const resetAudioInput = () => {
+    if (waveSurfer) {
+      waveSurfer.destroy();
+      setWaveSurfer(null);
+    }
+    setRecordingStatus('idle');
+    setAudioBlobUrl('');
+    setRecordedAudio(null);
   };
 
 
@@ -145,6 +157,30 @@ const Chat: React.FC = () => {
   };
   
   useEffect(scrollToBottom, [chatHistory]);
+
+  useEffect(() => {
+    console.log('Effect running', { audioBlobUrl, waveSurfer });
+    if (audioBlobUrl && waveformRef.current && !waveSurfer) {
+      console.log('Initializing WaveSurfer');
+        const ws: WaveSurfer = WaveSurfer.create({
+            container: waveformRef.current,
+            waveColor: 'violet',
+            progressColor: 'purple',
+            cursorColor: 'navy',
+            barWidth: 2,
+            barRadius: 3,
+            height: 50,
+            normalize: true,
+        });
+        ws.load(audioBlobUrl);
+        setWaveSurfer(ws);
+
+        return () => {
+          console.log('Destroying WaveSurfer');
+          ws.destroy(); // Cleanup on component unmount or when audioBlobUrl changes
+        }
+    }
+  }, [audioBlobUrl]);
   
   return (
     <div className='chat-container'>
@@ -163,13 +199,17 @@ const Chat: React.FC = () => {
         ))}
       </div>
       <div className="input-area">
-        <input 
-          type="text"
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          onKeyDown={handleKeyDown}
-          placeholder="Type your message"
-        />
+        {recordingStatus === 'recorded' ? (
+          <div ref={waveformRef} className="waveform-container"></div> // Container for the waveform
+        ) : (
+          <input
+            type="text"
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            onKeyDown={handleKeyDown}
+            placeholder="Type your message"
+          />
+        )}
         <FontAwesomeIcon 
           onClick={toggleRecording}
           icon={isRecording ? faStop : faMicrophone}
