@@ -176,7 +176,7 @@ const Chat: React.FC = () => {
             container: waveformRef.current,
             waveColor: '#7DE2D1',
             progressColor: '#FFFAFB',
-            cursorColor: 'white',
+            cursorWidth: 0,
             barWidth: 2,
             barRadius: 3,
             height: 50,
