@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import InfoModal from './InfoModal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMicrophone, faStop } from '@fortawesome/free-solid-svg-icons';
+import { faMicrophone, faStop, faPlay, faPause } from '@fortawesome/free-solid-svg-icons';
 import WaveSurfer from 'wavesurfer.js';
 import './Chat.css';
 
@@ -34,6 +34,7 @@ const Chat: React.FC = () => {
 
   const waveformRef = useRef(null); // Ref for the waveform container
   const [waveSurfer, setWaveSurfer] = useState<any>(null); // To store the WaveSurfer instance
+  const [isPlaying, setIsPlaying] = useState(false);
 
   const chatHistoryRef = useRef<HTMLDivElement>(null);
 
@@ -117,6 +118,16 @@ const Chat: React.FC = () => {
     setRecordedAudio(null);
   };
 
+  const togglePlayback = () => {
+    if (waveSurfer) {
+      if (waveSurfer.isPlaying()) {
+        waveSurfer.pause();
+      } else {
+        waveSurfer.play();
+      }
+      // setIsPlaying(!isPlaying);
+    }
+  };
 
   const scrollToBottom = () => {
     const chatHistoryEl = chatHistoryRef.current;
@@ -173,6 +184,10 @@ const Chat: React.FC = () => {
             normalize: true,
         });
         ws.load(audioBlobUrl);
+
+        ws.on('play', () => setIsPlaying(true));
+        ws.on('pause', () => setIsPlaying(false));
+
         setWaveSurfer(ws);
 
         return () => {
@@ -200,7 +215,14 @@ const Chat: React.FC = () => {
       </div>
       <div className="input-area">
         {recordingStatus === 'recorded' ? (
-          <div ref={waveformRef} className="waveform-container"></div> // Container for the waveform
+          <>
+          <FontAwesomeIcon 
+            icon={isPlaying ? faPause : faPlay}
+            className='playback-button'
+            onClick={togglePlayback}
+          />
+          <div ref={waveformRef} className="waveform-container"></div>
+        </>
         ) : (
           <input
             type="text"
