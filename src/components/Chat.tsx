@@ -103,8 +103,6 @@ const Chat: React.FC = () => {
     } catch (error) {
       console.error('Error sending audio message:', error);
       alert("Error sending audio message. Please try again.");
-      setIsRecording(false);
-      setRecordingStatus('idle');
     }
   };
 
