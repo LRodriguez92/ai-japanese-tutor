@@ -38,19 +38,19 @@
   }
   
   .front {
-    background-color: #39A9DB;
+    /* background-color: #39A9DB; */
   }
   
   .back {
-    background-color: #39A9DB;
+    /* background-color: #39A9DB; */
     transform: rotateY(180deg); /* Flip the backside */
-    text-shadow: 2px 2px #2B2C28;
+    text-shadow: 1px 1px 20px #39A9DB;
   }
   
   .character {
     /* font-size: 180px; Modify inline in component */
-    text-shadow: 3px 3px #2B2C28;
     margin-bottom: 10px;
+    text-shadow: 3px 3px 10px #39A9DB;
   }
   
   .pronunciation, .meaning {
