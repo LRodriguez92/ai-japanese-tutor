@@ -231,11 +231,11 @@ const Chat: React.FC = () => {
             placeholder="Type your message"
           />
         )}
-        <FontAwesomeIcon 
+        {/* <FontAwesomeIcon 
           onClick={recordingStatus === 'recorded' ? deleteRecording : toggleRecording}
           icon={recordingStatus === 'recorded' ? faTrash : (isRecording ? faStop : faMicrophone)}
           className='icon-button'
-        />
+        /> */}
         <button onClick={recordedAudio ? sendRecordedAudioMessage : sendMessage}>
           {recordedAudio ? "Send Audio" : "Send"}
         </button>
