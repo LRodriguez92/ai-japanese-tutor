@@ -1,4 +1,5 @@
 import './App.css';
+import Navbar from './components/Navbar';
 import FlashcardPage from './pages/FlashcardPage';
 import WritingCanvas from './components/WritingCanvas';
 import Chat from './components/Chat';
@@ -8,16 +9,8 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <nav>
-          <ul>
-            <li>
-              <Link to="/flashcards">Flashcards</Link>
-            </li>
-            <li>
-              <Link to="/chat">Chat</Link>
-            </li>
-          </ul>
-        </nav>
+        <Navbar />
+      </header>
 
         <Routes>
           <Route path="/flashcards" element={<FlashcardPage />} />
@@ -25,7 +18,6 @@ function App() {
           {/* Redirect to FlashcardPage as the default route */}
           <Route path="*" element={<FlashcardPage />} />
         </Routes>
-      </header>
     </div>
   );
 }

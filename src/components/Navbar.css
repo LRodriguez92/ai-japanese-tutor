@@ -1,0 +1,73 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2b2c28; /* Adjusted to a more solid color for emphasis */
+  padding: 10px 20px;
+  color: #39a9db;
+  position: relative;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds depth */
+  z-index: 2; /* Ensuring it's above floated elements */
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.nav-items {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-items a {
+  text-decoration: none;
+  color: #39a9db;
+  transition: color 0.3s ease;
+}
+
+.nav-items a:hover {
+  color: #73d2de; /* Flashcard border color */
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger .line {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .nav-items {
+    position: absolute;
+    right: -40px;
+    top: -100px;
+    flex-direction: column;
+    background-color: #2b2c28;
+    width: 100%;
+    transform: translateY(0);
+    transition: transform 0.3s ease-out;
+    padding: 20px;
+    gap: 10px;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-items a {
+    color: #fff;
+  }
+
+  .nav-items.open {
+    transform: translateY(165%);
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
