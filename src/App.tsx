@@ -3,7 +3,7 @@ import Navbar from './components/Navbar';
 import FlashcardPage from './pages/FlashcardPage';
 import WritingCanvas from './components/WritingCanvas';
 import Chat from './components/Chat';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 function App() {
   return (

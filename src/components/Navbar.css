@@ -18,6 +18,13 @@
 .nav-items {
   display: flex;
   gap: 20px;
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: right;
+  right: 20px;
+  top: 15px;
+  z-index: 3;
 }
 
 .nav-items a {
@@ -47,16 +54,17 @@
 @media (max-width: 768px) {
   .nav-items {
     position: absolute;
-    right: -40px;
+    right: 0px;
     top: -100px;
     flex-direction: column;
     background-color: #2b2c28;
-    width: 100%;
+    width: 91%;
     transform: translateY(0);
     transition: transform 0.3s ease-out;
     padding: 20px;
     gap: 10px;
     box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1;
   }
 
   .nav-items a {
