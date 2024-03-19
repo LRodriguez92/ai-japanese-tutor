@@ -2,12 +2,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #2b2c28; /* Adjusted to a more solid color for emphasis */
+  background-color: #28282c;
   padding: 10px 20px;
   color: #39a9db;
   position: relative;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds depth */
-  z-index: 2; /* Ensuring it's above floated elements */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  z-index: 2; /* Ensuring it's above nav-items */
 }
 
 .logo {
@@ -57,7 +57,7 @@
     right: 0px;
     top: -100px;
     flex-direction: column;
-    background-color: #2b2c28;
+    background-color: #28282cd1;
     width: 91%;
     transform: translateY(0);
     transition: transform 0.3s ease-out;

@@ -11,7 +11,7 @@ const Navbar: React.FC = () => {
   return (
     <>
         <nav className="navbar">
-        <div className="logo">MyApp</div>
+        <div className="logo">Japanese Tutor</div>
         <div className="hamburger" onClick={toggleMenu}>
             <div className="line"></div>
             <div className="line"></div>
