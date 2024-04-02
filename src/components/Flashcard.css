@@ -130,5 +130,9 @@
     .flashcard.swipe-right {
       transition: transform 0.15s ease-out;
     }
+
+    .flashcard-container {
+      margin-bottom: 160px;
+    }
   }
   
