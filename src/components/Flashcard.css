@@ -4,6 +4,7 @@
     align-items: center;
     perspective: 1000px; /* Needed for the flip effect */
     color: #FFFAFB;
+    margin-bottom: 70px;
   }
   
   .flashcard {
