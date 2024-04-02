@@ -79,7 +79,7 @@ input[type="text"] {
 button {
   padding: 8px 15px;
   border: none;
-  background-color: #399989;
+  background-color: #39A9DB;
   color: white;
   border-radius: 5px;
   cursor: pointer;
@@ -170,9 +170,15 @@ button:hover {
 
 @media (max-height: 844px) {
   .chat-container {
-    height: 91.3vh;
+    height: 79.2vh;
   }
 }
+
+/* @media (max-height: 844px) {
+  .chat-container {
+    height: 91.3vh;
+  }
+} */
 
 @media (max-height: 740px) {
   .chat-container {
