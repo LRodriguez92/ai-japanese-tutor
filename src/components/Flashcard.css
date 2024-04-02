@@ -67,7 +67,7 @@
   .navigation {
     display: flex;
     width: 100%;
-    justify-content: space-between;
+    justify-content: center;
     margin-top: 10px;
   }
 
@@ -75,8 +75,9 @@
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    background-color: #7DE2D1;
-    color: #313715;
+    background-color: #73D2DE;
+    color: #fff;
+    font-weight: bold;
     cursor: pointer;
   }
   

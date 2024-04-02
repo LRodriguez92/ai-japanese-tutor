@@ -214,9 +214,9 @@ const Flashcard = () => {
           </div>
         </div>
         <div className="navigation">
-          <FontAwesomeIcon icon={faArrowLeft} onClick={handlePrevious} className='arrows' />
-          <button onClick={handleCharacterSelectionClick}>Choose Characters</button>
-          <FontAwesomeIcon icon={faArrowRight} onClick={handleNext} className='arrows' />
+          {/* <FontAwesomeIcon icon={faArrowLeft} onClick={handlePrevious} className='arrows' /> */}
+          <button onClick={handleCharacterSelectionClick}>Change Character Type</button>
+          {/* <FontAwesomeIcon icon={faArrowRight} onClick={handleNext} className='arrows' /> */}
         </div>
       </div>
       <CharacterSelectionModal
