@@ -51,6 +51,12 @@
 }
 
 /* Responsive styles */
+
+@media (max-width: 1025px) {
+  .nav-items {
+    width: 100%;
+  }
+}
 @media (max-width: 768px) {
   .nav-items {
     position: absolute;
@@ -58,7 +64,7 @@
     top: -100px;
     flex-direction: column;
     background-color: #28282cd1;
-    width: 91%;
+    width: 95%;
     transform: translateY(0);
     transition: transform 0.3s ease-out;
     padding: 20px;
@@ -77,5 +83,11 @@
 
   .hamburger {
     display: flex;
+  }
+}
+
+@media (max-width: 445px) {
+  .nav-items {
+    width: 91%;
   }
 }
