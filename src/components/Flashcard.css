@@ -5,6 +5,7 @@
     perspective: 1000px; /* Needed for the flip effect */
     color: #FFFAFB;
     margin-bottom: 70px;
+    position: relative; /* Needed for proper positioning of the flashcard */
   }
   
   .flashcard {
@@ -100,3 +101,33 @@
   .shuffle.active {
     color: #56C4B8;
   }
+
+  .flashcard.swipe-left {
+    transform: translateX(-100vw) rotate(-20deg); /* Move to the left and rotate */
+    transition: transform 0.5s ease-out;
+  }
+  
+  .flashcard.swipe-right {
+    transform: translateX(100vw) rotate(20deg); /* Move to the right and rotate */
+    transition: transform 0.5s ease-out;
+  }
+
+  .flashcard-enter {
+    opacity: 1;
+    transition: opacity 0.1s ease-in;
+  }
+  
+  .flashcard-enter-active {
+    opacity: 0;
+  }
+
+  @media (max-width: 1024px) {
+    .flashcard.swipe-left {
+      transition: transform 0.15s ease-out;
+    }
+    
+    .flashcard.swipe-right {
+      transition: transform 0.15s ease-out;
+    }
+  }
+  

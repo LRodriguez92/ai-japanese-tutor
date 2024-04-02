@@ -37,6 +37,12 @@ const Flashcard = () => {
   const [touchEnd, setTouchEnd] = useState<number>(0);
   const [mouseStart, setMouseStart] = useState<number>(0);
   const [isMouseDown, setIsMouseDown] = useState<boolean>(false);
+  const [swipeDirection, setSwipeDirection] = useState<string | null>(null);
+  const [fadeCard, setFadeCard] = useState(false);
+  const [isSwiping, setIsSwiping] = useState(false);
+
+  const fadeOutDuration = 150; // Duration of the swipe away animation / This should match the duration of the swipe away animation
+  const fadeInDuration = 100; // Duration of the swipe in animation / Match this duration to your fade-in effect duration
 
 
   const handleTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
@@ -48,15 +54,21 @@ const Flashcard = () => {
   };
 
   const handleTouchEnd = (event: React.TouchEvent<HTMLDivElement>) => {
-    if (touchStart - touchEnd > 150) {
-      // Swipe left
-      handleNext();
-    } else if (touchStart - touchEnd < -150) {
-      // Swipe right
-      handlePrevious();
+    const touchEnd = event.changedTouches[0].clientX;
+    setTouchEnd(touchEnd);
+
+    const touchDistance = touchStart - touchEnd;
+    if (Math.abs(touchDistance) > 50) { // Swipe detected
+        setIsSwiping(true);
+        if (touchDistance > 0) {
+            handleNext();
+        } else {
+            handlePrevious();
+        }
     }
 
-    event.preventDefault();
+    // Wait for a bit after swipe to reset isSwiping to allow for animation to complete
+    setTimeout(() => setIsSwiping(false), fadeOutDuration);
   };
 
   const handleMouseDown = (event: React.MouseEvent<HTMLDivElement>) => {
@@ -68,12 +80,17 @@ const Flashcard = () => {
   const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
     if (isMouseDown) {
         const mouseEnd = event.clientX;
-        if (mouseStart - mouseEnd > 150) {
-            handleNext();
-            setIsMouseDown(false);  // End the swipe after detection
-        } else if (mouseStart - mouseEnd < -150) {
-            handlePrevious();
-            setIsMouseDown(false);  // End the swipe after detection
+        const threshold = 50; // Reduced threshold for swipe detection
+        if (Math.abs(mouseStart - mouseEnd) > threshold) {
+            // Detected a swipe, now determine the direction
+            setIsSwiping(true);
+            if (mouseStart - mouseEnd > threshold) {
+                handleNext();
+                setIsMouseDown(false); // End the swipe after detection
+            } else if (mouseStart - mouseEnd < -threshold) {
+                handlePrevious();
+                setIsMouseDown(false); // End the swipe after detection
+            }
         }
     }
   };
@@ -132,17 +149,44 @@ const Flashcard = () => {
 
   const { character, pronunciation, meaning, romaji, type } = getCurrentCard();
 
-  const handleFlip = () => setIsFlipped(!isFlipped);;
-
+  const handleFlip = () => {
+    console.log("isSwiping: ", isSwiping);
+    console.log("flipping");
+    
+    if (!isSwiping) {
+        setIsFlipped(!isFlipped);
+    }
+  };
   const handleNext = () => {
     setIsFlipped(false);
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % filteredFlashcards.length);
+    setSwipeDirection('left');
+
+    setTimeout(() => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % filteredFlashcards.length);
+        setSwipeDirection(null);
+        setFadeCard(true);
+        setTimeout(() => {
+          setFadeCard(false);
+          setIsSwiping(false);  // Re-enable click actions after the transition
+        }, fadeInDuration); // Match this duration to your fade-in effect duration
+    }, fadeOutDuration); // This should match the duration of the swipe away animation
   };
 
   const handlePrevious = () => {
-    setIsFlipped(false);
-    setCurrentIndex((prevIndex) => (prevIndex === 0 ? filteredFlashcards.length - 1 : prevIndex - 1));
+      setIsFlipped(false);
+      setSwipeDirection('right');
+
+      setTimeout(() => {
+          setCurrentIndex((prevIndex) => prevIndex === 0 ? filteredFlashcards.length - 1 : prevIndex - 1);
+          setSwipeDirection(null);
+          setFadeCard(true);
+          setTimeout(() => {
+            setFadeCard(false);
+            setIsSwiping(false);  // Re-enable click actions after the transition
+          }, fadeInDuration); // Match this duration to your fade-in effect duration
+      }, fadeOutDuration); // This should match the duration of the swipe away animation
   };
+
 
   const handleCharacterSelectionClick = () => setShowModal(true);
   const closeModal = () => setShowModal(false);
@@ -151,7 +195,7 @@ const Flashcard = () => {
     <>
       <div className="flashcard-container">
         <FontAwesomeIcon icon={faShuffle} onClick={handleShuffle} className={`shuffle ${isShuffled ? 'active' : ''}`} />
-        <div className={`flashcard ${isFlipped ? 'flipped' : ''}`} 
+        <div className={`flashcard ${isFlipped ? 'flipped' : ''} ${swipeDirection === 'left' ? 'swipe-left' : swipeDirection === 'right' ? 'swipe-right' : ''} ${fadeCard ? 'flashcard-enter-active' : 'flashcard-enter'}`} 
           onClick={handleFlip}
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
