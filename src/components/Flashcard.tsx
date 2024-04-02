@@ -7,6 +7,7 @@ import { faShuffle, faArrowRight, faArrowLeft } from '@fortawesome/free-solid-sv
 import './Flashcard.css';
 
 import './Flashcard.css';
+import { log } from 'console';
 
 const Flashcard = () => {
   const getInitialFilterOptions = (): FilterOptions => {
@@ -29,7 +30,63 @@ const Flashcard = () => {
   const [showModal, setShowModal] = useState(false);
   const [filterOptions, setFilterOptions] = useState<FilterOptions>(getInitialFilterOptions());
   const [isShuffled, setIsShuffled] = useState(false); 
-  const [shuffledIndexes, setShuffledIndexes] = useState<number[]>([]); 
+  const [shuffledIndexes, setShuffledIndexes] = useState<number[]>([]);
+
+  // Swipe feature
+  const [touchStart, setTouchStart] = useState<number>(0);
+  const [touchEnd, setTouchEnd] = useState<number>(0);
+  const [mouseStart, setMouseStart] = useState<number>(0);
+  const [isMouseDown, setIsMouseDown] = useState<boolean>(false);
+
+
+  const handleTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
+    setTouchStart(event.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (event: React.TouchEvent<HTMLDivElement>) => {
+    setTouchEnd(event.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = (event: React.TouchEvent<HTMLDivElement>) => {
+    if (touchStart - touchEnd > 150) {
+      // Swipe left
+      handleNext();
+    } else if (touchStart - touchEnd < -150) {
+      // Swipe right
+      handlePrevious();
+    }
+
+    event.preventDefault();
+  };
+
+  const handleMouseDown = (event: React.MouseEvent<HTMLDivElement>) => {
+    event.preventDefault();
+    setMouseStart(event.clientX);
+    setIsMouseDown(true);
+  };
+
+  const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
+    if (isMouseDown) {
+        const mouseEnd = event.clientX;
+        if (mouseStart - mouseEnd > 150) {
+            handleNext();
+            setIsMouseDown(false);  // End the swipe after detection
+        } else if (mouseStart - mouseEnd < -150) {
+            handlePrevious();
+            setIsMouseDown(false);  // End the swipe after detection
+        }
+    }
+  };
+
+  const handleMouseUp = () => {
+      setIsMouseDown(false);
+  };
+
+  const handleMouseLeave = () => {
+      setIsMouseDown(false); // Reset on mouse leave to prevent stuck state
+  };
+
+
 
   useEffect(() => {
     // Save to localStorage whenever filterOptions changes
@@ -94,7 +151,15 @@ const Flashcard = () => {
     <>
       <div className="flashcard-container">
         <FontAwesomeIcon icon={faShuffle} onClick={handleShuffle} className={`shuffle ${isShuffled ? 'active' : ''}`} />
-        <div className={`flashcard ${isFlipped ? 'flipped' : ''}`} onClick={handleFlip}>
+        <div className={`flashcard ${isFlipped ? 'flipped' : ''}`} 
+          onClick={handleFlip}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+          onMouseDown={handleMouseDown}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseLeave}
+          onMouseMove={handleMouseMove}>
           <div className="front">
           <div className="character" style={{ fontSize: type === "Kanji" ? "130px" : (type === "Hiragana-Yoon" || type === "Katakana-Yoon") ? "150px" : "220px" }}>{character}</div>
             <div className="pronunciation">{pronunciation}</div>
