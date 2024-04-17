@@ -21,7 +21,7 @@ const Chat: React.FC = () => {
   const [input, setInput] = useState<string>('');
   const [chatHistory, setChatHistory] = useState<ChatMessage[]>([]);
   const [showModal, setShowModal] = useState(() => {
-    return localStorage.getItem('showModal') !== 'false';
+    return localStorage.getItem('showChatModal') !== 'false';
   });
 
   // Audio state
