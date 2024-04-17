@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
-import InfoModal from './InfoModal';
+import ChatModal from './ChatModal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMicrophone, faStop, faPlay, faPause, faTrash } from '@fortawesome/free-solid-svg-icons';
 import WaveSurfer from 'wavesurfer.js';
@@ -198,7 +198,7 @@ const Chat: React.FC = () => {
   
   return (
     <div className='chat-container'>
-      {showModal && <InfoModal onClose={() => setShowModal(false)} />}
+      {showModal && <ChatModal onClose={() => setShowModal(false)} />}
       <div ref={chatHistoryRef} className="chat-history">
         {chatHistory.map((msg, index) => (
           <div className={`message-wrapper ${msg.sender}`} key={index} onClick={() => msg.sender === 'ai' && toggleTranslation(index)}>
