@@ -24,10 +24,12 @@ const Flashcard = () => {
       "Katakana-Yoon": true
     };
   };
+  
+
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isFlipped, setIsFlipped] = useState(false);
-  const [showModal, setShowModal] = useState(false);
+  const [showCharModal, setShowCharModal] = useState(false);
   const [filterOptions, setFilterOptions] = useState<FilterOptions>(getInitialFilterOptions());
   const [isShuffled, setIsShuffled] = useState(false); 
   const [shuffledIndexes, setShuffledIndexes] = useState<number[]>([]);
@@ -188,8 +190,8 @@ const Flashcard = () => {
   };
 
 
-  const handleCharacterSelectionClick = () => setShowModal(true);
-  const closeModal = () => setShowModal(false);
+  const handleCharacterSelectionClick = () => setShowCharModal(true);
+  const closeModal = () => setShowCharModal(false);
 
   return (
     <>
@@ -220,7 +222,7 @@ const Flashcard = () => {
         </div>
       </div>
       <CharacterSelectionModal
-        showModal={showModal}
+        showModal={showCharModal}
         filterOptions={filterOptions}
         setFilterOptions={setFilterOptions}
         closeModal={closeModal}
