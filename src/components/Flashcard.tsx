@@ -4,6 +4,7 @@ import { kanjiData } from '../data/flashcardDataKanji'; // Import Kanji data
 import { CharacterSelectionModal, FilterOptions } from './CharacterSelectionModal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShuffle, faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import FlashcardModal from './FlashcardModal';
 import './Flashcard.css';
 
 import './Flashcard.css';
@@ -25,7 +26,9 @@ const Flashcard = () => {
     };
   };
   
-
+  const [showFlashcardModal, setShowFlashcardModal] = useState(() => {
+    return localStorage.getItem('showFlashcardModal') !== 'false';
+  });
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isFlipped, setIsFlipped] = useState(false);
@@ -195,6 +198,7 @@ const Flashcard = () => {
 
   return (
     <>
+      {showFlashcardModal && <FlashcardModal onClose={() => setShowFlashcardModal(false)} />}
       <div className="flashcard-container">
         <FontAwesomeIcon icon={faShuffle} onClick={handleShuffle} className={`shuffle ${isShuffled ? 'active' : ''}`} />
         <div className={`flashcard ${isFlipped ? 'flipped' : ''} ${swipeDirection === 'left' ? 'swipe-left' : swipeDirection === 'right' ? 'swipe-right' : ''} ${fadeCard ? 'flashcard-enter-active' : 'flashcard-enter'}`} 
