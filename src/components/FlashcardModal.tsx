@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShuffle } from '@fortawesome/free-solid-svg-icons';
 import './FlashcardModal.css';
 
 interface InfoModalProps {
@@ -23,18 +25,22 @@ const FlashcardModal: React.FC<InfoModalProps> = ({ onClose }) => {
     <div className="modal-background">
       <div className="modal-content">
         <h3>Let's learn some Kana!</h3>
-        <p>This interactive chat feature allows you to converse with an AI language instructor. You can type your messages in either english or japanese (you might have to enable a japanese keyboard on your device).
         <br />
-        <br />
-        For added learning, you can tap on any response from the AI to see its translation. This feature is designed to enhance your language learning experience by providing instant translations and engaging conversations.
-        <br />
-        <br />
-        Remember, you can always revisit this info by accessing the help section in the chat.
+        <p>
+          Use this interactive tool to enhance your language learning experience. Here are a few tips on how to use the Flashcard component effectively:
+          <br />
+          <br />
+          <ul>
+            <li><strong>Swipe right:</strong> Move to the next card.</li>
+            <li><strong>Swipe left:</strong> Go back to the previous card.</li>
+            <li><strong>Press the shuffle icon:</strong> <FontAwesomeIcon icon={faShuffle} /> This will shuffle the order of the flashcards.</li>
+            <li><strong>Click the "Change Kana" button:</strong> <button className="demo-button">Change Kana</button> This allows you to select which Kana you want to practice learning.</li>
+          </ul>
         </p>
         <div className="modal-footer">
           <label>
             <input type="checkbox" checked={doNotShowAgain} onChange={handleCheckboxChange} />
-            Don't show this again
+            &nbsp; Don't show this again
           </label>
           <button onClick={handleClose}>Close</button>
         </div>

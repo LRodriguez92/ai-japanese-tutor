@@ -34,7 +34,7 @@ const ChatModal: React.FC<InfoModalProps> = ({ onClose }) => {
         <div className="modal-footer">
           <label>
             <input type="checkbox" checked={doNotShowAgain} onChange={handleCheckboxChange} />
-            Don't show this again
+            &nbsp; Don't show this again
           </label>
           <button onClick={handleClose}>Close</button>
         </div>

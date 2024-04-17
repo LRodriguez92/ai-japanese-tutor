@@ -26,3 +26,22 @@
     align-items: center;
     margin-top: 20px;
 }
+
+.demo-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #73D2DE;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+}
