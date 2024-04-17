@@ -20,7 +20,7 @@ interface ChatMessage {
 const Chat: React.FC = () => {
   const [input, setInput] = useState<string>('');
   const [chatHistory, setChatHistory] = useState<ChatMessage[]>([]);
-  const [showModal, setShowModal] = useState(() => {
+  const [showChatModal, setShowChatModal] = useState(() => {
     return localStorage.getItem('showChatModal') !== 'false';
   });
 
@@ -198,7 +198,7 @@ const Chat: React.FC = () => {
   
   return (
     <div className='chat-container'>
-      {showModal && <ChatModal onClose={() => setShowModal(false)} />}
+      {showChatModal && <ChatModal onClose={() => setShowChatModal(false)} />}
       <div ref={chatHistoryRef} className="chat-history">
         {chatHistory.map((msg, index) => (
           <div className={`message-wrapper ${msg.sender}`} key={index} onClick={() => msg.sender === 'ai' && toggleTranslation(index)}>
