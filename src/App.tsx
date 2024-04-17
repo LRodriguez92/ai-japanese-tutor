@@ -15,7 +15,7 @@ function App() {
         <Routes>
           <Route path="/flashcards" element={<FlashcardPage />} />
           <Route path="/chat" element={<Chat />} />
-          {/* Redirect to FlashcardPage as the default route */}
+          {/* Redirect to ChatPage as the default route */}
           <Route path="*" element={<Chat />} />
         </Routes>
     </div>
