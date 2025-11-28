@@ -142,7 +142,7 @@ const Chat: React.FC = () => {
     setInput('');
     
     try {
-      const response = await axios.post('https://fair-jade-crab-toga.cyclic.app/api/openai'||'http://localhost:3001/api/openai', { prompt: userMessage });
+      const response = await axios.post('https://ai-japanese-tutor-server.onrender.com/api/openai', { prompt: userMessage });
       const { japanese, english } = response.data;
       setChatHistory(prev => [...prev, { sender: 'ai', text: { japanese, english }, showEnglish: false }]);
     } catch (error) {
